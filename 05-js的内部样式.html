@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05-js的内部样式.html</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		div{
+			height: 100px;
+			width: 100px;
+			margin: 100px auto;
+			background:#000;
+			transition:all 1s;
+		}
+	</style>
+	<script>
+		function toChange(){
+			var oBox = document.getElementById('box');
+			oBox.style.height='200px';
+			oBox.style.width='200px';
+			oBox.style.background='#abc';
+		}
+		function toNormal(){
+			var oBox = document.getElementById('box');
+			oBox.style.height='100px';
+			oBox.style.width='100px';
+			oBox.style.background='#000';
+		}
+	</script>
+</head>
+<body>
+	<div id="box" onmouseover="toChange()";
+	onmouseout='toNormal()'></div>
+</body>
+</html>
