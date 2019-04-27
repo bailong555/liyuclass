@@ -10,6 +10,3 @@ var oSsm=document.getElementById('ssm');
 oSsm.onclick = toImg;
 var oWz=document.getElementById('wz');
 oWz.onclick = toImages;
-
-// onclick='toImg()' 
-// onclick='toImages()' 
