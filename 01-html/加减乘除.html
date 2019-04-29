@@ -9,7 +9,8 @@
 	<input type="text" id="j1">-
 	<input type="text" id="c">*
 	<input type="text" id="c1">/
-	<input type="text" id="d">
+	<input type="text" id="d">=
+	<input type="text" id="dy">
 	<button id="z">计算</button>
 </body>
 <script>
@@ -18,6 +19,7 @@
 	var oC = document.getElementById('c');
 	var oC1 = document.getElementById('c1');
 	var oD = document.getElementById('d');
+	var oDy = document.getElementById('dy');
 	var oZ = document.getElementById('z');
 
     oZ.onclick = function(){
@@ -27,7 +29,7 @@
     	var rd = parseFloat(oC1.value);
     	var dd = parseFloat(oD.value);
 
-    	alert(ad + ad1 - ls * rd / dd);
+    	oDy.value = (ad + ad1 - ls * rd / dd);
     }
 </script>
 </html>

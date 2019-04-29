@@ -1,0 +1,34 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.logo{
+	width: 100%;
+	background:#28292c;
+	position:relative;
+}
+.logo .lg{
+	height: 45px;
+}
+.lg a:first-child{
+	line-height:50px;
+	position:absolute;
+	left:20px;
+}
+.lg .lg-ul{
+	color:#c3c3c4;
+	line-height:45px;
+	margin:auto;
+}
+.lg .lg-li{
+	margin-left:40px;
+	float:left;
+	font-size:12px;
+	cursor:pointer;
+}
+.lg .lg-li:hover{
+	color: #e5e5e5;
+}
+.lg a i{
+	color: #fff;
+}
