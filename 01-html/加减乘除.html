@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>加减乘除.html</title>
+</head>
+<body>
+	<input type="text" id="j">+
+	<input type="text" id="j1">-
+	<input type="text" id="c">*
+	<input type="text" id="c1">/
+	<input type="text" id="d">
+	<button id="z">计算</button>
+</body>
+<script>
+	var oJ = document.getElementById('j');
+	var oJ1 = document.getElementById('j1');
+	var oC = document.getElementById('c');
+	var oC1 = document.getElementById('c1');
+	var oD = document.getElementById('d');
+	var oZ = document.getElementById('z');
+
+    oZ.onclick = function(){
+    	var ad = parseFloat(oJ.value);
+    	var ad1 = parseFloat(oJ1.value);
+    	var ls = parseFloat(oC.value);
+    	var rd = parseFloat(oC1.value);
+    	var dd = parseFloat(oD.value);
+
+    	alert(ad + ad1 - ls * rd / dd);
+    }
+</script>
+</html>
