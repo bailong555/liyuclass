@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08-秒变时间.html</title>
+</head>
+<body>
+	<ul>
+		<li id=""></li>
+		<li id=""></li>
+		<li id=""></li>
+	</ul>
+</body>
+<script>
+	var a = 7419;
+
+	var hour = parseInt(a / 3600);
+	var minute = parseInt(a % 3600 / 60);
+	var second = parseFloat(a % 3600 % 60);
+
+	if(hour<10){
+		hour = '0' + hour;
+	}
+	if(minute<10){
+		minute = '0' + minute;
+	}
+	if(second<10){
+		second = '0' + second;
+	}
+
+	document.write(hour + ":" + minute + ":" + second);
+</script>
+</html>
