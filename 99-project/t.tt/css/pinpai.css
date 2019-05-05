@@ -4,31 +4,158 @@
 }
 .logo{
 	width: 100%;
-	background:#28292c;
 	position:relative;
 }
 .logo .lg{
 	height: 45px;
+	background:#28292c;
 }
 .lg a:first-child{
 	line-height:50px;
 	position:absolute;
 	left:20px;
+	top:0px;
 }
 .lg .lg-ul{
 	color:#c3c3c4;
 	line-height:45px;
 	margin:auto;
+	margin-left:470px;
 }
 .lg .lg-li{
 	margin-left:40px;
 	float:left;
 	font-size:12px;
 	cursor:pointer;
+	transition:all 1s;
+	font-weight:bold;
 }
 .lg .lg-li:hover{
 	color: #e5e5e5;
 }
+.lg a{
+	width:10px;
+	color:#ccc;
+	position:absolute;
+	top: 10px;
+	right: 40px;
+}
 .lg a i{
-	color: #fff;
+	font-size:16px;
+}
+.lg a:hover{
+	color:gray;
+}
+.lg a:last-child{
+	right:80px;
+}
+.lg .gwc:hover + .a-1{
+	display:block;
+}
+.lg .a-1{
+	width: 350px;
+	height: 300px;
+	border-radius: 20px;
+	background:#ececec;
+	position:absolute;
+	top:50px;
+	right:28px;
+	text-align:center;
+	display:none;
+}
+.lg .a-1 i{
+	font-size: 60px;
+	color:#ccc;
+	position:absolute;
+	top:75px;
+	right:148px;
+}
+.lg .a-1 .a-01{
+	font-size:20px;
+	margin-top:170px;
+}
+.lg .a-1 .a-02{
+	font-size:12px;
+	margin-top:10px;
+	color:#ccc;
+}
+.logo .fix{
+	width: 100%;
+	height:75px;
+	background:#fff;
+	box-shadow:0px 3px 3px #e5e5e5;
+}
+.logo .fix-1 li{
+	float:left;
+	margin-right:25px;
+	line-height:75px;
+	font-size:14px;
+}
+.logo .fix-1 li:first-child{
+	margin-left:342px;
+}
+.logo .fix-1 li a{
+	color:#333;
+}
+.logo .fix-1 li a:hover{
+	color: blue;
+}
+.logo .fix input{
+	width: 170px;
+	border-radius:20px;
+	border:none;
+	font-size:12px;
+	color: #6e65cc;
+	line-height:20px;
+	text-align:center;
+	background:#e5efff;
+	position:absolute;
+	top: 73px;
+	right:225px;
+}
+.logo .qp{
+	width: 100%;
+	height: 60px;
+	background:red;
+	position:fixed;
+	top:40px;
+	display:none;
+}
+.logo .qp .gd{
+	position:absolute;
+	top: 20px;
+	right:400px;
+}
+.logo .qp .gdz{
+	position:absolute;
+	top: 20px;
+	right:440px;
+}
+.logo .qp .fix-1 li{
+	line-height:60px;
+}
+/* .logo结束 */
+.top{
+	background:#ededed;
+	width: 100%;
+	height: 5000px;
+}
+.top img{
+	margin-top:25px;
+	box-shadow:0px 3px 3px #e5e5e5;
+}
+.top .top-t{
+	width: 100%;
+	height: 200px;
+	float:left;
+	border-radius:5px;
+}
+.top .top-t li{
+	float:left;
+	cursor: pointer;
+}
+.top .rm{
+	width: 100%;
+	height: 30px;
+	line-height:30px;
 }
