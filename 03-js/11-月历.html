@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11-月历.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.div{
+			width: 380px;
+			height: 600px;
+			background:#ccc;
+			margin:100px auto;
+		}
+		ul{
+			overflow:hidden;
+		}
+		li{
+			float:left;
+			list-style:none;
+			width: 100px;
+			height: 100px;
+			line-height:100px;
+			text-align:center;
+			color:#fff;
+			background:#000;
+			display:inline-block;
+			margin-left:20px;
+			margin-top:20px;
+			font-size:20px;
+			cursor:pointer;
+		}
+		.li-1{
+			color: #000;
+			background:#fff;
+		}
+		.d{
+			margin-top:20px;
+			margin-left:20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="div">
+		<ul>
+			<li class="li-1">1月</li>
+			<li>2月</li>
+			<li>3月</li>
+			<li>4月</li>
+			<li>5月</li>
+			<li>6月</li>
+			<li>7月</li>
+			<li>8月</li>
+			<li>9月</li>
+			<li>10月</li>
+			<li>11月</li>
+			<li>12月</li>
+		</ul>
+		<div class="d"><h2>1月</h2><p>睡觉</p>
+		</div>
+	</div>
+</body>
+<script>
+	var aLi = document.getElementsByTagName('li');
+	var oD = document.querySelector('.d');
+	var all =['玩耍','睡觉','打豆豆','吃饭','睡觉','打豆豆','吃饭','睡觉','打豆豆','吃饭','睡觉','打豆豆']
+
+	oD.innerHTML="<h2>1月</h2><p>"+ all[0] +"</p>";
+	
+	for(var a =0;a<aLi.length;a++){
+		aLi[a].index=a;
+		aLi[a].onmouseover=function(){
+			for(var b=0;b<aLi.length;b++){
+				aLi[b].className="";
+			}
+			this.className="li-1";
+			oD.innerHTML="<h2>" + (this.index+1) + "月</h2><p>"+ all[this.index] +"</p>";
+		}
+	}
+</script>
+</html>

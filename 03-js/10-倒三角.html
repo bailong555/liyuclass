@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10-倒三角.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.red{
+			display:inline-block;
+			width: 20px;
+			height: 20px;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+<script>
+	for(var a =1;a<8;a++){
+		for(var b=1;b<8-a;b++){
+			document.write("<span class='red'></span>");
+		}
+		for(var c=1;c<=a;c++){
+			document.write("<span class='red'>*</span>");
+		}
+		document.write("<br>");
+	}
+</script>
+</html>
