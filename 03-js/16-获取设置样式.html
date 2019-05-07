@@ -25,19 +25,18 @@
 	var oBtn2 = document.getElementById('btn1');
 	var oBox = document.getElementById('box');
 
-	function css(){
-		if(arguments.length == 2){
-			arguments[0].style[arguments[1]]='red';
+	function css(a,b,c){
+		if(arguments.length==2){
+			alert(getComputedStyle(a,false)[b]);
 		}else{
-			alert(getComputedStyle(oBox,false));
+			a.style[b] = c;
 		}
 	}
 	oBtn1.onclick =function(){
-		oBox.style.backgroundColor='red';
+		css(oBox,'width');
 	}
 	oBtn2.onclick =function(){
-		alert(getComputedStyle(oBox,false)['backgroundColor']);
+		css(oBox,'width','200px');
 	}
-    css();
 </script>
 </html>
