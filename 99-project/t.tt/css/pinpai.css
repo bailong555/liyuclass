@@ -375,6 +375,7 @@ body{
 	bottom:30px;
 	right:45px;
 	display:none;
+	cursor:not-allowed;
 }
 .head .sjpj .pj .pj-nr .xz{
 	width: 100px;
