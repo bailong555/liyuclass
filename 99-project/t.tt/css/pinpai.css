@@ -451,3 +451,9 @@ body{
 	top:28px;
 	right: 145px;
 }
+.head .sjpj .gf ul .gfy2 a{
+	border:none;
+}
+.head .sjpj .gf ul .gfy a:after{
+	right:132px;
+}
