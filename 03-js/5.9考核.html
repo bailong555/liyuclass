@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var are =[1,5,9,7,6,3,4,2];
+	console.log(are);
+	var c=0;
+	for(var i=0;i<are.length;i++){
+		for(var b=i+1;b<are.length;b++){
+			if(are[i]>are[b]){
+				c=are[i];
+				are[i]=are[b];
+				are[b]=c;
+			}
+		}
+	}
+	console.log(are);
+</script>
+</html>
