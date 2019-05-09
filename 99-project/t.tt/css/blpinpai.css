@@ -146,13 +146,13 @@ body{
 	margin-top:25px;
 	box-shadow:0px 3px 3px #e5e5e5;
 }
-.top .top-t{
+.top-t{
 	width: 100%;
 	height: 250px;
 	float:left;
 	border-radius:5px;
 }
-.top .top-t li{
+.top-t li{
 	float:left;
 	cursor: pointer;
 }
@@ -267,7 +267,6 @@ body{
 /* .top结束 */
 .head{
 	width: 100%;
-	height: 5000px;
 }
 .head .sjpj .p{
 	box-sizing:border-box;
@@ -456,4 +455,88 @@ body{
 }
 .head .sjpj .gf ul .gfy a:after{
 	right:132px;
+}
+/* .head结束 */
+.conter{
+	width: 100%;
+	margin-top: 30px;
+}
+.conter .top-t li{
+	width: 25%;
+}
+.conter .lt{
+	width: 100%;
+	margin-top: -20px;
+	height: 375px;
+	background:#fff;
+	float: left;
+	border-radius:10px;
+}
+.conter .ltop{
+	height: 60px;
+	color: #666;
+	border-bottom: 1px solid #ccc;
+}
+.conter .ltop .z{
+	float: left;
+	line-height:60px;
+	margin-left:28px;
+	font-size:18px;
+}
+.conter .ltop a{
+	margin-top:15px;
+	margin-right:15px;
+	display:inline-block;
+	width: 90px;
+	height: 35px;
+	line-height:35px;
+	float: right;
+	text-align:center;
+	border: 1px solid #ccc;
+	border-radius:2px;
+}
+.conter .ltop .y{
+	color:#666;
+}
+.conter .lbom{
+	height: 314px;
+	float: left;
+}
+.conter .lbom li{
+	float: left;
+	width: 304px;
+	border-right: 1px solid #ccc;
+}
+.conter .lbom li a img{
+	margin: 30px 0px 30px 30px;
+}
+.conter .lbom li a strong{
+	display:inline-block;
+	margin:0px 30px 10px;
+	width: 250px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	color: #333;
+	font-weight:bold;
+	font-size:15px;
+}
+.conter .lbom li a p{
+	margin:0px 30px 15px;
+	font-size:9px;
+	color:#ccc;
+}
+.conter .lbom li a span{
+	margin:0px 30px 15px;
+	font-size: 12px;
+	color:#5079d9;
+}
+.conter .lbom li:last-child{
+	border: none;
+}
+/* .conter结束 */
+.foot{
+	margin-top:30px;
+	height: 360px;
+	background:#fff;
 }
