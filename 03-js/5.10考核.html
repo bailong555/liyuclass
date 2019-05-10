@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5.10考核.html</title>
+</head>
+<body>
+</body>
+<script>
+	var arr = [1,2,9,8,4,2,3,4,5,6,9];
+
+	var pl = arr.sort(function(c1,c2){
+		console.log(c1,c2);
+		return c1 - c2;
+		})
+	console.log(arr);
+
+
+	function xinshuzu(xsz){
+		var cz = [];
+		for(var i=0;i<arr.length;i++){
+			if(cz.indexOf(arr[i],0)== -1){
+				cz.push(arr[i]);
+			}
+		}
+		return cz;
+	}
+	var newXsz = xinshuzu(arr);
+	console.log(newXsz);
+</script>
+</html>

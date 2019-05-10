@@ -559,6 +559,9 @@ body{
 .foot .lb dd a{
 	color:#969696;
 }
+.foot .lb dd a:hover{
+	color: #5089e1;
+}
 .foot .lb .zx{
 	width: 160px;
 	height: 160px;
@@ -622,6 +625,9 @@ body{
 	float:left;
 	font-size: 12px;
 	color:#969696;
+}
+.foot .db ul li a:hover{
+	color:#dedede;
 }
 .foot .db ul li span{
 	color: #dedede;

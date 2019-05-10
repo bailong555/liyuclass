@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>21-鼠标移入高亮移出还原.html</title>
+</head>
+<body>
+	<ul id="ul">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+<script>
+	var oUl = document.getElementById('ul');
+	var oLi = oUl.children;
+	console.log(oLi);
+
+	for(var a=0;a<oLi.length;a++){
+		if(a%2){
+		oLi[a].style.background='red';
+		}else{
+		oLi[a].style.background='#ccc';
+		}
+		var oldColor = "";
+		    oLi[a].onmouseover=function(){
+				oldColor = this.style.background;
+				this.style.background='#afc';
+				}
+			oLi[a].onmouseout=function(){
+				this.style.background=oldColor;
+				}
+		}
+</script>
+</html>
