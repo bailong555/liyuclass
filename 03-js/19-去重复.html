@@ -11,23 +11,21 @@
 	var a = [1,2,3,4,5,6,7,8,9,6,5,4,3,2,1];
 	console.log(a);
 	function b(a1){
-		var cz=[];
-		for(var i=0;i<a1.length;i++){
-			var abc =false;
-			for(var j=0;j<cz.length;j++){
-				if(a1[i]==cz[j]){
-					abc = true;
+		var cz =[];
+		for(var i=0;i<a.length;i++){
+			var bl =false;
+			for(var j=0;j<a.length;j++){
+				if(a[i]==cz[j]){
+					bl=true;
 					break;
 				}
 			}
-			if(!abc){
-				cz.push(a1[i]);
+			if(!bl){
+				cz.push(a[i]);
 			}
 		}
 		return cz;
 	}
-	var newA1 = b(a);
-	console.log(a);
-	console.log(newA1);
+	console.log(b(a));
 </script>
 </html>

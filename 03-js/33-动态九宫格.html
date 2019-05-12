@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>33-动态九宫格.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: relative;
+		}
+		.box{
+			width: 100px;
+			height: 100px;
+			background:red;
+			position:absolute;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">点击生成</button>
+	<div id="box">
+		<div class="box"></div>
+	</div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var oBbb = oBox.children;
+
+	var iWidth = 100;
+	var iHeight = 100;
+	var iPadding = 15;
+	var iList = 3;
+
+	oBtn.oclick=function(){}
+</script>
+</html>

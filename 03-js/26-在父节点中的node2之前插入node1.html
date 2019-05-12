@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>在父节点node2之前插入node1</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<button id="btn">点击插入</button>
+	<ul id="ul2">
+		<li></li>
+	</ul>
+</body>
+<script>
+	var oUl1 = document.getElementById('ul1');
+	var oLi = oUl1.children;
+	var oUl2 = document.getElementById('ul2');
+	var oBtn = document.getElementById('btn');
+
+	oBtn.onclick=function(){
+		oUl2.appendChild(oLi[0]);
+	}
+</script>
+</html>
