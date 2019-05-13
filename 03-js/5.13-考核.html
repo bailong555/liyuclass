@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5.13-考核.html</title>
+</head>
+<body>
+	<input type="text" id="inp">
+	<button id="btn">点击按钮</button>
+	<ul id="ul"></ul>
+</body>
+<script>
+	var oTxt = document.getElementById('inp');
+	var oBtn = document.getElementById('btn');
+	var oUl = document.getElementById('ul');
+
+	oBtn.onclick=function(){
+		var oVal = oTxt.value;
+		var oLi = document.createElement('li');
+		oLi.innerHTML = oVal;
+		oUl.insertBefore(oLi,oUl.firstChild);
+		oTxt.value = '';
+	}
+</script>
+</html>
