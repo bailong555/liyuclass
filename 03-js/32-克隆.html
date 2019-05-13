@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>32-克隆元素.html</title>
+	<title>32-克隆.html</title>
 	<style>
 		*{
 			margin: 0;
@@ -11,20 +11,23 @@
 		#box{
 			width: 100px;
 			height: 100px;
-			background: red;
+			background:red;
+			margin-bottom:5px;
 		}
 	</style>
 </head>
 <body>
-	<button id="btn">点击克隆</button>
-	<div id="box">克隆</div>
+	<button id="btn">点击生成</button>
+	<div id="box">111</div>
 </body>
 <script>
 	var oBtn = document.getElementById('btn');
 	var oBox = document.getElementById('box');
 
-	oBtn.onclcik = function(){
-		oBox.cloneNode(true);
+	oBtn.onclick=function(){
+		var newBox = oBox.cloneNode(true);
+		document.body.appendChild(newBox);
+		console.log(newBox);
 	}
 </script>
 </html>
