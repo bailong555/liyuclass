@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>37-定时器.html</title>
+</head>
+<body>
+	<button id="btn">关闭</button>
+</body>
+<script>
+	// var oBtn = document.getElementById('btn');
+
+	// var timer = 0;
+	// var i = 0;
+	// oBtn.onclick=function(){
+	// 	clearInterval(timer);
+	// }
+
+	// timer = setTimeout(function(){
+	// 	timer = setInterval(function(){
+	// 	console.log(i);
+	// },1000);
+	// },1000);
+	console.clear();
+	console.log("a");
+	setTimeout(function(){console.log("b");},100);console.log("c");
+	function waitForMs(n) {    	var now = Date.now();    	
+		while (Date.now() - now < n) {}}     waitForMs(0);
+	setTimeout(function(){console.log("d");} ,0);
+</script>
+</html>
