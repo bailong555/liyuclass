@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>40-数码时钟图片版.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			background: #000;
+		}
+		#time{
+			width: 400px;
+			border: 1px solid #000;
+			margin:450px auto;
+			text-align:center;
+		}
+		#time span{
+			font-size: 50px;
+			vertical-align:middle;
+			color: #fff;
+		}
+		#time img{
+			width: 50px;
+			height: 50px;
+			vertical-align:middle;
+		}
+	</style>
+</head>
+<body>
+	<div id="time">
+		<img src="../img/0.png" alt="">
+		<img src="../img/8.png" alt="">
+		<span>:</span>
+		<img src="../img/2.png" alt="">
+		<img src="../img/6.png" alt="">
+		<span>:</span>
+		<img src="../img/4.png" alt="">
+		<img src="../img/7.png" alt="">
+	</div>
+</body>
+<script>
+	function timer(num){
+		return num<10? "0"+num:""+num;
+	}
+
+	var time = document.getElementById('time');
+	var aImg = time.children;
+	var today = new Date();
+    function sTime(){
+    	var iHour = today.getHours();
+		var iMinute = today.getMinutes();
+		var iSecond = today.getSeconds();
+		var timeStr = ""+timer(iHour)+timer(iMinute)+timer(iSecond);
+		console.log(timeStr);
+		for(var i=0;i<aImg.length;i++){
+			aImg[i].src = '../img/'+timeStr.charAt(i)+'.png';
+		}
+    }
+    // setInterval(sTime,1000);
+	sTime();
+</script>
+</html>

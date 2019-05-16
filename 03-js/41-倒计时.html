@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>41-倒计时.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			background:#000;
+		}
+		#time{
+			font-size: 50px;
+			color:#fff;
+			text-align:center;
+			margin:450px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="time">
+		距离活动结束还有22小时37分钟16秒
+	</div>
+</body>
+<script>
+	function timer(num){
+		return num<10?"0"+num:""+num;
+	}
+	var oTime = document.getElementById('time');
+
+	var endTime = new Date("2019/5/16/12:00:00");
+    var tim = 0;
+    function oRefresh(){
+		var allMinsecond = endTime.getTime() - Date.now();
+		if(allMinsecond<=0){
+			allMinsecond=0;
+			clearInterval(tim);
+		}
+		var allSecond = parseInt(allMinsecond / 1000);
+		var allHour = parseInt(allSecond/3600);
+		var allMinute = parseInt(allSecond % 3600 / 60);
+		var iSecond =  parseInt(allSecond % 3600 % 60);
+
+		oTime.innerHTML ="距离活动结束还有"+timer(allHour)+"小时"+timer(allMinute)+"分钟"+timer(iSecond)+"秒";
+		}
+		 tim = setInterval(oRefresh,1000);
+		 oRefresh();
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>47-匀速动画.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			margin-top:100px;
+			background: red;
+			position:absolute;
+			top: 0px;
+			left:0px;
+			transition: all 3s linear;
+		}
+		.line{
+			width: 0;
+			height: 300px;
+			border: 1px solid #000;
+			margin-left:500px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">点击移动</button>
+	<div id="box"></div>
+	<div class="line"></div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	var oBtn = document.getElementById('btn');
+
+	oBtn.onclick=function(){
+		// oBox.style.left = 400+'px';
+	}
+	var timer = '';
+</script>
+</html>

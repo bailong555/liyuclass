@@ -8,19 +8,19 @@
 	<button id="btn">关闭</button>
 </body>
 <script>
-	// var oBtn = document.getElementById('btn');
+	var oBtn = document.getElementById('btn');
 
-	// var timer = 0;
-	// var i = 0;
-	// oBtn.onclick=function(){
-	// 	clearInterval(timer);
-	// }
+	var timer = 0;
+	var i = 0;
+	oBtn.onclick=function(){
+		clearInterval(timer);
+	}
 
-	// timer = setTimeout(function(){
-	// 	timer = setInterval(function(){
-	// 	console.log(i);
-	// },1000);
-	// },1000);
+	timer = setTimeout(function(){
+		timer = setInterval(function(){
+		console.log(i);
+	},1000);
+	},1000);
 	console.clear();
 	console.log("a");
 	setTimeout(function(){console.log("b");},100);console.log("c");

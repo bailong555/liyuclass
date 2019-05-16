@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5.15考核.html</title>
+</head>
+<body>
+	<div id="box">
+		<div></div>
+	</div>
+</body>
+<script>
+	function to2Str(num){//定义了一个用来处理时间的函数
+		return num < 10 ? '0'+num : ''+num;
+		//函数的返回值，无论是个位，还是两位都会返回出两位
+		}
+		var oBox = document.getElementById('box');//获取DOM元素
+		var aImg = oBox.children;//获取子元素
+		var timer = 0;//定义一个变量，一会用来控制定时器的开关
+		var orderTime = new Date('2018-12-07 19:00:00');//目标时间
+		var endTime = orderTime.getTime();//距离目标时间的剩余时间
+		function time(){//封装函数
+			var allTime = (endTime - Date.now())/1000;//距离目标剩余秒数
+			if(allTime <= 0 ){//判断距离目标时间
+				allTime = 0;//目标时间为0
+				clearInterval(timer);//清除定时器
+			}
+			var oH = parseInt(allTime/3600);//剩余时间转为小时
+			var oM = parseInt((allTime%3600)/60);//剩余时间转为分钟
+			var oS = parseInt(allTime%3600)%60;//取剩余时间秒数
+			var time = to2Str(oH)+to2Str(oM)+to2Str(oS);//给函数赋值
+			for(var i =0;i<aImg.length;i++){//循环遍历图片
+				aImg[i].src = 'image/'+time.charAt(i)+'.png';//循环图片
+			}
+
+		}
+		timer = setInterval(time,1000);//给timer添加一个循环定时器
+		time();//执行名为time函数
+</script>
+</html>
