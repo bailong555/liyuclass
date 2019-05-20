@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01-免密码登陆.html</title>
+	<style>
+		#box{
+			width: 120px;
+			height: 20px;
+			background: red;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn">免登陆
+	<div id="box">确定要选择吗？</div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+
+	oBtn.onmouseover=function(){
+		oBox.style.display='block';
+	}
+	oBtn.onmouseout=function(){
+		oBox.style.display='none';
+	}
+</script>
+</html>
