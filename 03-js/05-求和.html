@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05-求和.html</title>
+</head>
+<body>
+	<input type="text" id="plus">+
+	<input type="text" id="minus">-
+	<input type="text" id="ride">*
+	<input type="text" id="divide">/
+	<input type="text" id="equal">=
+	<input type="text" id="result">
+	<button id="btn">计算</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oP = document.getElementById('plus');
+	var oM = document.getElementById('minus');
+	var oR = document.getElementById('ride');
+	var oD = document.getElementById('divide');
+	var oE = document.getElementById('equal');
+	var oY = document.getElementById('result');
+
+	oBtn.onclick=function(){
+		var oVal1 = parseInt(oP.value);
+		var oVal2 = parseInt(oM.value);
+		var oVal3 = parseInt(oR.value);
+		var oVal4 = parseInt(oD.value);
+		var oVal5 = parseFloat(oE.value);
+		
+		oY.value = (oVal1+oVal2-oVal3*oVal4/oVal5);
+	}
+</script>
+</html>

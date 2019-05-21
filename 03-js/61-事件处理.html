@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>61-事件处理.html</title>
+</head>
+<body>
+	<button id="btn">点击</button>
+	<button id="btn1">移除</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBtn1 = document.getElementById('btn1');
+
+	function event(){
+		alert('Tom');
+	}
+	function Leo(){
+		alert('Leo');
+	}
+
+	// oBtn.onclick=event;
+	oBtn.addEventListener('click',event,false);
+	oBtn.addEventListener('click',Leo,false);
+	oBtn.addEventListener('click',function(){
+		alert('Jack');
+	},false);
+	oBtn1.addEventListener('click',function(){
+		oBtn.removeEventListener('click',event,false);
+		oBtn.removeEventListener('click',Leo,false);
+	},false);
+</script>
+</html>
