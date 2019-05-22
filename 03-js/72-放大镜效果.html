@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>72-放大镜效果.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#father{
+			margin: 50px 100px;
+			position: relative;
+		}
+		#box{
+			width: 450px;
+			height: 450px;
+			border: 1px solid #000;
+		}
+		#box #flap{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: #abcdef;
+			display: none;
+		}
+		#list li{
+			margin:10px 25px 0px 0px;
+			width: 80px;
+			height: 80px;
+			list-style:none;
+			float: left;
+			opacity:0.5;
+		}
+		#list .bk{
+			border: 2px solid #f00;
+			opacity:1;
+			box-sizing: border-box;
+		}
+		#list li img{
+			width: 100%;
+			height: 100%;
+		}
+		#box2{
+			width: 800px;
+			height: 800px;
+			position: absolute;
+			left:452px;
+			top: 0;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="father">
+		<div id="box">
+			<div id="flap"></div>
+			<img src="../img/p_b_0001.jpg" alt="">
+		</div>
+		<ul id="list">
+			<li class="bk">
+				<img src="../img/p_s_0001.jpg" alt="">
+			</li>
+			<li>
+				<img src="../img/p_s_0002.jpg" alt="">
+			</li>
+			<li>
+				<img src="../img/p_s_0003.jpg" alt="">
+			</li>
+		</ul>
+		<div id="box2">
+			<img src="../img/p_l_0001.jpg" alt="">
+		</div>
+	</div>
+</body>
+<script>
+	var oBox1 = document.getElementById('father');
+	var oFlap = document.getElementById('flap');
+	var oBoximg = document.querySelector('#box img');
+	var oLi = document.querySelectorAll('#list');
+	var oListimg = document.querySelector('#list img');
+	var oBox2 = document.getElementById('box2');
+	var oBox2img = document.querySelector('#box2 img');
+
+	for(i=0;i<oLi.length;i++){
+		oLi[i].index = i;
+		oLi[i].onmouseover=function(){
+			this.className = 'bk';
+		}
+	}
+</script>
+</html>

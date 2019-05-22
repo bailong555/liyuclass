@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>64-基本拖拽功能.html</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+
+	oBox.onmousedown=function(ev){
+		var diX = ev.clientX - oBox.offsetLeft;
+		var diY = ev.clientY - oBox.offsetTop;
+
+		document.onmousemove=function(ev){
+			oBox.style.left=ev.clientX - diX + 'px';
+			oBox.style.top=ev.clientY - diY + 'px';
+		}
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>68-带边框的拖拽.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 200px;
+			height: 200px;
+			background: red;
+			position:absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+		}
+		.nn{
+			position: absolute;
+			background: red;
+			border: 5px solid #000;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<img src="../img/s.gif" alt="" id="box">
+</body>
+<script>
+	var oBox = document.getElementById('box');
+
+	oBox.onmousedown=function(ev){
+		var divX = ev.clientX - oBox.offsetLeft;
+		var divY = ev.clientY - oBox.offsetTop;
+		var l = 0;
+		var t = 0;
+
+		var newBox = document.createElement('div');
+		newBox.style.width=oBox.offsetWidth+'px';
+		newBox.style.height=oBox.offsetHeight+'px';
+		newBox.style.left=oBox.offsetLeft+'px';
+		newBox.style.top=oBox.offsetTop+'px';
+		newBox.className = 'nn';
+
+		document.body.appendChild(newBox);
+
+		document.onmousemove=function(ev){
+			l = ev.clientX-divX;
+			t = ev.clientY-divY;
+			if(l<20){
+				l=0;
+			}else if(l + 20>window.innerWidth-newBox.offsetWidth){
+				l=window.innerWidth-newBox.offsetWidth
+			}
+			if(t<20){
+				t=0;
+			}else if(t + 20>window.innerHeight-newBox.offsetHeight){
+				t=window.innerHeight-newBox.offsetHeight
+			}
+			newBox.style.left= l+'px';
+			newBox.style.top= t+'px';
+		}
+		document.onmouseup=function(){
+			oBox.style.left=newBox.offsetLeft+'px';
+			oBox.style.top=newBox.offsetTop+'px';
+			document.body.removeChild(newBox);
+			document.onmousemove=null;
+			document.onmouseup=null;
+		}
+	}
+</script>
+</html>

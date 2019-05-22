@@ -3,9 +3,45 @@
 <head>
 	<meta charset="UTF-8">
 	<title>05-JS语法.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#father{
+			width: 500px;
+			height: 500px;
+			background: #abcdef;
+			margin:150px auto;
+		}
+		#son{
+			width: 100px;
+			height: 100px;
+			background: #fedcba;
+			margin:150px auto;
+		}
+	</style>
 </head>
 <body>
-	
+	<div id="father">
+		<div id="son"></div>
+	</div>
 </body>
-<script></script>
+<script>
+	var oBox = document.getElementById('father');
+	var oBox1 = document.getElementById('son');
+
+	// oBox.onmousemove=function(){
+	// 	console.log(oBox1);
+	// }
+	// oBox.onmouseout=function(){
+	// 	console.log(oBox1);
+	// }
+	oBox.onmouseenter=function(){
+		console.log(oBox1);
+	}
+	oBox.onmouseleave=function(){
+		console.log(oBox1);
+	}
+</script>
 </html>

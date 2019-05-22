@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5.21考核.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 200px;
+			height: 100px;
+			background: url(../img/s.gif);
+			background-repeat: no-repeat;
+			background-size:200px;
+			position:absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			cursor:pointer;
+		}
+		.nn{
+			position: absolute;
+			background: url(../img/s.gif);
+			opacity: 0.5;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+
+	oBox.onmousedown=function(ev){
+		var divX = ev.clientX - oBox.offsetLeft;
+		var divY = ev.clientY - oBox.offsetTop;
+		var l = 0;
+		var t = 0;
+
+		var newBox = document.createElement('div');
+		newBox.style.width=oBox.offsetWidth+'px';
+		newBox.style.height=oBox.offsetHeight+'px';
+		newBox.style.left=oBox.offsetLeft+'px';
+		newBox.style.top=oBox.offsetTop+'px';
+		newBox.className = 'nn';
+
+		document.body.appendChild(newBox);
+
+		document.onmousemove=function(ev){
+			l = ev.clientX-divX;
+			t = ev.clientY-divY;
+			if(l<20){
+				l=0;
+			}else if(l + 20>window.innerWidth-newBox.offsetWidth){
+				l=window.innerWidth-newBox.offsetWidth
+			}
+			if(t<20){
+				t=0;
+			}else if(t + 20>window.innerHeight-newBox.offsetHeight){
+				t=window.innerHeight-newBox.offsetHeight
+			}
+			newBox.style.left= l+'px';
+			newBox.style.top= t+'px';
+		}
+		document.onmouseup=function(){
+			oBox.style.left=newBox.offsetLeft+'px';
+			oBox.style.top=newBox.offsetTop+'px';
+			document.body.removeChild(newBox);
+			document.onmousemove=null;
+			document.onmouseup=null;
+		}
+	}
+</script>
+</html>

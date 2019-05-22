@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>69-自定义滚动条.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#father{
+			width: 500px;
+			height: 30px;
+			background: #abcdef;
+			margin:100px auto;
+			position:relative;
+		}
+		#son{
+			width: 30px;
+			height: 30px;
+			background: #fedcba;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="father">
+		<div id="son"></div>
+	</div>
+	<div id="box"></div>
+</body>
+<script>
+	var oBox = document.getElementById('son');
+	var oBox2 = document.getElementById('box');
+	var oBox1 = document.getElementById('father');
+
+	oBox.onmousedown=function(ev){
+		var divX = ev.clientX - oBox.offsetLeft;
+		var l = 0;
+
+		document.onmousemove=function(ev){
+			l = ev.clientX-divX;
+			if(l<0){
+				l=0;
+			}else if(l>oBox1.offsetWidth-oBox.offsetWidth){
+				l=oBox1.offsetWidth-oBox.offsetWidth
+			}
+
+			var ratio = l/(oBox1.offsetWidth-oBox.offsetWidth);
+
+			oBox.style.left= l+'px';
+			oBox2.style.width=100 + 400 * ratio +'px';
+			oBox2.style.height=100 + 400 * ratio +'px';
+		}
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		}
+	}
+</script>
+</html>

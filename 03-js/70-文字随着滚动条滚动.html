@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>70-文字随着滚动条滚动.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#father{
+			width: 30px;
+			height: 500px;
+			background: #abcdef;
+			margin:100px auto;
+			position:relative;
+		}
+		#son{
+			width: 30px;
+			height: 30px;
+			background: #fedcba;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#box{
+			position: absolute;
+			top: 0;
+			right: 0px;
+		}
+		#txt{
+			width: 500px;
+			height: 500px;
+			border: 1px solid #000;
+			position: absolute;
+			top: 0;
+			right: 30px;
+			overflow: hidden;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div id="father">
+		<div id="son"></div>
+		<div id="txt">
+			<div id="box">　新华社上海5月20日电（记者黄小希、许晓青） 第十二届中国艺术节20日晚在上海拉开帷幕。
+
+			　　本届中国艺术节由文化和旅游部、上海市人民政府共同主办，以“逐梦新时代——向国庆献礼，向人民汇报”为主题。艺术节坚持“艺术的盛会、人民的节日”的办节宗旨和“精品、惠民、节俭、可持续”的办节原则，将展示近年来我国文艺创作的丰硕成果和文艺工作者的精神风貌，向中华人民共和国成立70周年献礼。
+
+			　　艺术节期间，来自全国各地的51台优秀剧目将在上海的19个剧场为观众演出，演出总量超过百场。同时，还将举办第十六届文华奖和第十八届群星奖评奖，优秀美术、书法篆刻、摄影作品展览，演艺及文创产品博览会，并开展一系列文化惠民活动。其中，文创产品首次纳入中国艺术节。由上海歌舞团有限公司排演的舞剧《永不消逝的电波》作为20日晚的开幕演出，吸引各界观众约1400人共聚上海大剧院观演。
+
+			　　中国艺术节是我国规格最高、最具影响力的国家级综合性文化艺术盛会，自1987年创办以来已成功举办了11届。本届艺术节将持续至6月2日。　新华社上海5月20日电（记者黄小希、许晓青） 第十二届中国艺术节20日晚在上海拉开帷幕。
+
+			　　本届中国艺术节由文化和旅游部、上海市人民政府共同主办，以“逐梦新时代——向国庆献礼，向人民汇报”为主题。艺术节坚持“艺术的盛会、人民的节日”的办节宗旨和“精品、惠民、节俭、可持续”的办节原则，将展示近年来我国文艺创作的丰硕成果和文艺工作者的精神风貌，向中华人民共和国成立70周年献礼。
+
+			　　艺术节期间，来自全国各地的51台优秀剧目将在上海的19个剧场为观众演出，演出总量超过百场。同时，还将举办第十六届文华奖和第十八届群星奖评奖，优秀美术、书法篆刻、摄影作品展览，演艺及文创产品博览会，并开展一系列文化惠民活动。其中，文创产品首次纳入中国艺术节。由上海歌舞团有限公司排演的舞剧《永不消逝的电波》作为20日晚的开幕演出，吸引各界观众约1400人共聚上海大剧院观演。
+
+			　　中国艺术节是我国规格最高、最具影响力的国家级综合性文化艺术盛会，自1987年创办以来已成功举办了11届。本届艺术节将持续至6月2日。　新华社上海5月20日电（记者黄小希、许晓青） 第十二届中国艺术节20日晚在上海拉开帷幕。
+
+			　　本届中国艺术节由文化和旅游部、上海市人民政府共同主办，以“逐梦新时代——向国庆献礼，向人民汇报”为主题。艺术节坚持“艺术的盛会、人民的节日”的办节宗旨和“精品、惠民、节俭、可持续”的办节原则，将展示近年来我国文艺创作的丰硕成果和文艺工作者的精神风貌，向中华人民共和国成立70周年献礼。
+
+			　　艺术节期间，来自全国各地的51台优秀剧目将在上海的19个剧场为观众演出，演出总量超过百场。同时，还将举办第十六届文华奖和第十八届群星奖评奖，优秀美术、书法篆刻、摄影作品展览，演艺及文创产品博览会，并开展一系列文化惠民活动。其中，文创产品首次纳入中国艺术节。由上海歌舞团有限公司排演的舞剧《永不消逝的电波》作为20日晚的开幕演出，吸引各界观众约1400人共聚上海大剧院观演。
+
+			　　中国艺术节是我国规格最高、最具影响力的国家级综合性文化艺术盛会，自1987年创办以来已成功举办了11届。本届艺术节将持续至6月2日。　新华社上海5月20日电（记者黄小希、许晓青） 第十二届中国艺术节20日晚在上海拉开帷幕。
+
+			　　本届中国艺术节由文化和旅游部、上海市人民政府共同主办，以“逐梦新时代——向国庆献礼，向人民汇报”为主题。艺术节坚持“艺术的盛会、人民的节日”的办节宗旨和“精品、惠民、节俭、可持续”的办节原则，将展示近年来我国文艺创作的丰硕成果和文艺工作者的精神风貌，向中华人民共和国成立70周年献礼。
+
+			　　艺术节期间，来自全国各地的51台优秀剧目将在上海的19个剧场为观众演出，演出总量超过百场。同时，还将举办第十六届文华奖和第十八届群星奖评奖，优秀美术、书法篆刻、摄影作品展览，演艺及文创产品博览会，并开展一系列文化惠民活动。其中，文创产品首次纳入中国艺术节。由上海歌舞团有限公司排演的舞剧《永不消逝的电波》作为20日晚的开幕演出，吸引各界观众约1400人共聚上海大剧院观演。
+
+			　　中国艺术节是我国规格最高、最具影响力的国家级综合性文化艺术盛会，自1987年创办以来已成功举办了11届。本届艺术节将持续至6月2日。　新华社上海5月20日电（记者黄小希、许晓青） 第十二届中国艺术节20日晚在上海拉开帷幕。
+
+			　　本届中国艺术节由文化和旅游部、上海市人民政府共同主办，以“逐梦新时代——向国庆献礼，向人民汇报”为主题。艺术节坚持“艺术的盛会、人民的节日”的办节宗旨和“精品、惠民、节俭、可持续”的办节原则，将展示近年来我国文艺创作的丰硕成果和文艺工作者的精神风貌
+		</div>
+		</div>
+	</div>
+</body>
+<script>
+	var oBox = document.getElementById('son');
+	var oBox2 = document.getElementById('box');
+	var oBox3 = document.getElementById('txt');
+	var oBox1 = document.getElementById('father');
+
+	oBox1.onmousedown=function(ev){
+		var divY = ev.clientY - oBox.offsetTop;
+		var l = 0;
+
+		document.onmousemove=function(ev){
+			l = ev.clientY-divY;
+			// if(l<0){
+			// 	l=0;
+			// }else if(l>oBox1.offsetHeight-oBox.offsetHeight){
+			// 	l=oBox1.offsetHeight-oBox.offsetHeight
+			// }
+
+			// var ratio = l/(oBox1.offsetHeight-oBox.offsetHeight);
+
+			// oBox.style.top= l+'px';
+			// oBox2.style.top= -(oBox2.offsetHeight-oBox3.offsetHeight)*ratio+'px';
+			move();
+		}
+		oBox1.onmousewheel=function(ev){
+			if(ev.wheelDelta<0){
+				l += 10;
+			}else{
+				l -= 10;
+			}
+			move();
+		}
+		function move(){
+			if(l<0){
+				l=0;
+			}else if(l>oBox1.offsetHeight-oBox.offsetHeight){
+				l=oBox1.offsetHeight-oBox.offsetHeight
+			}
+
+			var ratio = l/(oBox1.offsetHeight-oBox.offsetHeight);
+
+			oBox.style.top= l+'px';
+			oBox2.style.top= -(oBox2.offsetHeight-oBox3.offsetHeight)*ratio+'px';
+		}
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		}
+	}
+</script>
+</html>
