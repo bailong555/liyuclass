@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5.22考核.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background:red;
+			position: absolute;
+			top: 0;
+			left: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	var iSpeed = 0;
+	var move = null;
+	move=setInterval(function(){
+		iSpeed=iSpeed+10;
+		var t = window.innerHeight-oBox.offsetTop;
+		if(t < oBox.offsetHeight){
+			clearInterval(move);
+		}else{
+			oBox.style.top=iSpeed+'px';
+		}	
+	},50);
+	document.onkeydown=function(ev){
+		if(ev.keyCode==40){
+			iSpeed=iSpeed+20;
+		}else if(ev.keyCode==38){
+			iSpeed=iSpeed-50;
+		}
+	}
+</script>
+</html>

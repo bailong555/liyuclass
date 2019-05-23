@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>75-表单事件.html</title>
+</head>
+<body>
+	<form action="https://123.sogou.com" target="_blank">
+		<input type="text" id="txt">
+		<input type="submit" id="sub">
+		<input type="reset" id="res">
+		<p id="nr"></p>
+	</form>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oP = document.getElementById('nr');
+
+	oTxt.onfocus=function(){
+		oP.innerHTML = '请输入内容';
+		oP.style.color = 'red';
+	}
+	oTxt.onblur=function(){
+		oP.innerHTML = '输入错误';
+		oP.style.color = '#abcdef';
+	}
+	oTxt.onchange=function(){
+		oP.innerHTML = '请重新输入';
+		oP.style.color = '#fedcba';
+	}
+</script>
+</html>
