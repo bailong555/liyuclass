@@ -30,10 +30,11 @@
 		oBox.style.left=ev.clientX +'px';
 		oBox.style.top=ev.clientY +'px';
 		return false;
-		event.stopPropagation();
+		
 	}
-	document.onclick=function(ev){
+	oBox.onclick=function(ev){
 		oBox.style.display='block';
+		event.stopPropagation();
 	}
 	document.onclick=function(ev){
 		oBox.style.display='none';

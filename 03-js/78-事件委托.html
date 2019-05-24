@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>78-事件委托.html</title>
+</head>
+<body>
+	<button id="btn">点击生成</button>
+	<ul id="list">
+		<li>1<a href="#">删除</a></li>
+		<li>2<a href="#">删除</a></li>
+		<li>3<a href="#">删除</a></li>
+	</ul>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oUl = document.getElementById('list');
+
+	oBtn.onclick=function(){
+		oUl.removeAttribute('li');
+	}
+</script>
+</html>

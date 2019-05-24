@@ -39,10 +39,10 @@
 		divT=ev.clientY-oBox1.offsetTop;
 
 		oBox1.onmousemove=function(ev){
-			if(oBox1.offsetLeft+oBox1.offsetWidth>=oBox2.offsetLeft
-				&& oBox1.offsetTop+oBox1.offsetHeight>=oBox2.offsetTop
-				&&oBox2.offsetLeft+oBox2.offsetWidth>=oBox1.offsetLeft
-				&& oBox2.offsetTop+oBox2.offsetHeight>=oBox1.offsetTop
+			if(oBox2.offsetLeft<=oBox1.offsetLeft+oBox1.offsetWidth
+				&& oBox2.offsetTop<=oBox1.offsetTop+oBox1.offsetHeight
+				&&oBox1.offsetLeft<=oBox2.offsetLeft+oBox2.offsetWidth
+				&& oBox1.offsetTop<=oBox2.offsetTop+oBox2.offsetHeight
 				){
 				oBox2.style.background="red";
 			}else{

@@ -94,7 +94,7 @@
 		oMask.style.display='block';
 		oMirror.style.display='block';
 
-		oMask.onmouseover=function(ev){
+		oMask.onmousemove=function(ev){
 			var l = ev.clientX - oMask.offsetWidth*0.5 - oFather.offsetLeft;
 			var t = ev.clientY - oMask.offsetHeight*0.5 - oFather.offsetTop;
 

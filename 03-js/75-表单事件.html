@@ -5,7 +5,7 @@
 	<title>75-表单事件.html</title>
 </head>
 <body>
-	<form action="https://123.sogou.com" target="_blank">
+	<form action="https://123.sogou.com" target="_blank" autocomplete="off">
 		<input type="text" id="txt">
 		<input type="submit" id="sub">
 		<input type="reset" id="res">
@@ -21,12 +21,28 @@
 		oP.style.color = 'red';
 	}
 	oTxt.onblur=function(){
-		oP.innerHTML = '输入错误';
-		oP.style.color = '#abcdef';
+		var len = oTxt.value.length;
+		if(len<4||len>8){
+			oP.innerHTML = '输入错误';
+			oP.style.color = '#abcdef';
+		}else{
+			oP.innerHTML = '输入合法';
+			oP.style.color = 'black';
+		}
 	}
 	oTxt.onchange=function(){
-		oP.innerHTML = '请重新输入';
-		oP.style.color = '#fedcba';
+		console.log('输入改动');
+	}
+	oTxt.oninput=function(){
+		var len = oTxt.value.length;
+		if(len<4||len>8){
+			oP.innerHTML = '输入错误';
+			oP.style.color = '#abcdef';
+		}else{
+			oP.innerHTML = '输入合法';
+			oP.style.color = 'black';
+		}
+		console.log('输入有改动');
 	}
 </script>
 </html>

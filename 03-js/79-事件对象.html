@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>79-事件对象.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#father{
+			width: 500px;
+			height: 500px;
+			background: #abcdef;
+			margin: 200px auto;
+			overflow: hidden;
+		}
+		#son{
+			width: 200px;			
+			height: 200px;
+			background:#fedcba;
+			margin: 150px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="father">
+		<div id="son"></div>
+	</div>
+</body>
+<script>
+	var oBox1 = document.getElementById('father');
+	var oBox2 = document.getElementById('son');
+
+	// oBox1.onclick=function(ev){
+	// 	console.log(ev.target);
+	// 	console.log(ev.currentTarget);
+	// 	console.log(ev.type);
+	// }
+	// oBox2.onclick=function(ev){
+	// 	console.log(ev.target);
+	// 	console.log(ev.currentTarget);
+	// 	console.log(ev.type);
+	// }
+
+	var color = function(ev){
+		if(ev.type=='click'){
+			oBox2.style.background='#abefdc';
+		}else if(ev.type=='mouseover'){
+			oBox2.style.background='#fcbadc';
+		}else if(ev.type=='mouseout'){
+			oBox2.style.background='#dbacef';
+		}
+	}
+	oBox2.onmouseover=color;
+	oBox2.onclick=color;
+	oBox2.onmouseout=color;
+</script>
+</html>

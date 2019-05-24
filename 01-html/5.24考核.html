@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5.24考核.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#list{
+			width: 280px;
+		}
+		li{
+			width: 280px;
+			list-style:none;
+			float: left;
+			border-bottom:1px solid #ccc;
+		}
+		li a{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<textarea name="" id="txt" cols="30" rows="10"></textarea>
+	<button id="btn">发布</button>
+	<ul id="list"></ul>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oList = document.getElementById('list');
+
+	oBtn.onclick=function(){
+		var val = oTxt.value;
+		var oLi = document.createElement('li');
+		oLi.innerHTML = val;
+		oList.insertBefore(oLi,oList.firstChild);
+		var oA = document.createElement('a');
+		oA.href = 'javascript:;';
+		oA.innerHTML = '删除';
+		oLi.appendChild(oA);
+		oTxt.value = '';
+
+		oA.onclick=function(){
+			oList.removeChild(oLi);
+		}
+	}
+</script>
+</html>

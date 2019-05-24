@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>蒙板效果.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 300px;
+			height: 400px;
+			background: #abfedc;
+			position: absolute;
+			top: 50%;
+			margin-top: -200px;
+			left: 50%;
+			margin-left:-150px;
+			z-index:2;
+			display: none;
+		}
+		#mask{
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: rgba(0, 0, 0,0.3);
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">注册账号</button>
+	<div id="box">注册信息</div>
+	<div id="mask"></div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var oMask = document.getElementById('mask');
+
+	oBtn.onclick=function(ev){
+		oBox.style.display='block';
+		oMask.style.display='block';
+		event.stopPropagation();
+	}
+	oBox.onclick=function(ev){
+		event.stopPropagation();
+	}
+	document.onclick=function(){
+		oBox.style.display='none';
+		oMask.style.display='none';
+	}
+</script>
+</html>
