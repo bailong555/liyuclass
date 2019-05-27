@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>84-new关键字.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function sayname(){
+		console.log('I am '+this.name);
+	}
+	function sayage(){
+		console.log("I am "+ this.age+ "years old");
+	}
+	function show(name,age,sex){
+		this.name=name;
+		this.age=age;
+		this.sex=sex;
+		this.sayname=sayname;
+		this.sayage=sayage;
+	}
+	var obj = new show('tom',18,'man');
+	console.log(obj);
+	obj.sayname();
+	obj.sayage();
+	var obj2 = new show('leo',28,'woman');
+	console.log(obj2);
+	obj2.sayname();
+	obj2.sayage();
+</script>
+</html>

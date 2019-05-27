@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>82-面向对象.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr =[1,2,3,4,5,6,5,4,3,2,1];
+	
+	function num(arr){
+		var obj ={};
+		var relate = [];
+		for(var i=0;i<arr.length;i++){
+			obj[arr[i]]='';
+		}
+		for(arrt in obj){
+			relate.push(arrt*1);
+		}
+		return relate;
+	}
+	console.log(num(arr));
+</script>
+</html>

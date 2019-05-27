@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>83-构造函数创建.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = new Object();
+	arr.name='Tom';
+	arr.sex='man';
+	arr.age=18;
+	arr.hello=function(){
+		console.log('hello'+this.name);
+	}
+	var ass = new Object();
+	ass.name='Jack';
+	ass.sex='woman';
+	ass.age=20;
+	ass.hello=function(){
+		console.log('hello'+this.name);
+	}
+	console.log(arr);
+	console.log(ass);
+</script>
+</html>

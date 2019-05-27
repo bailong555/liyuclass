@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>85-原型模式.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function aaa(name,age,sex){
+		this.name=name;
+		this.age=age;
+		this.sex=sex;
+		if(!aaa.prototype.sayname){
+			console.log(1);
+			aaa.prototype.sayname=function(){
+			console.log('I am '+this.name);
+			}
+		}
+		if(!aaa.prototype.sayage){
+			console.log(2);
+			aaa.prototype.sayage=function(){
+				console.log("I am "+ this.age+ "years old");
+			}
+		}
+	}
+	var obj = new aaa('Tom',18,'man');
+	console.log(obj);
+	obj.sayname();
+	obj.sayage();
+	var obj2 = new aaa('leo',18,'man');
+	console.log(obj2);
+	obj2.sayname();
+	obj2.sayage();
+	var obj3 = new aaa('jack',18,'man');
+	console.log(obj3);
+	obj3.sayname();
+	obj3.sayage();
+	var obj4 = new aaa('mary',18,'man');
+	console.log(obj4);
+	obj4.sayname();
+	obj4.sayage();
+</script>
+</html>

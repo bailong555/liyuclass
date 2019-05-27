@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>86-原型对象-选项卡.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+			float: left;
+			margin-right: 15px;
+			cursor:pointer;
+		}
+		.li{
+			color:#ff6700;
+			border-bottom: 2px solid #ff6700;
+		}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li class="li">选项</li>
+		<li>选项</li>
+		<li>选项</li>
+		<li>选项</li>
+	</ul>
+</body>
+<script>
+	function Tab(){
+		var oList = document.getElementById('list');
+		var oLi =document.getElementsByTagName('li');
+		var _this = this; 
+
+		for(var i=0;i<oLi.length;i++){
+			oLi[i].onclick=function(){
+				_this.fnclick(this);
+			}
+		}
+	}
+	Tab.prototype.fnclick=function(){
+		for(var j=0;j<this.oLi.length;j++){
+			this.oLi[j].className='';
+		}
+		oLi.className='li';
+	}
+</script>
+</html>

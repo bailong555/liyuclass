@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11-全选和全不选.html</title>
+</head>
+<body>
+	<button id="btn1">全选</button>
+	<button id="btn2">全不选</button>
+	<button id="btn3">反选</button>
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+</body>
+<script>
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var oBtn3 = document.getElementById('btn3');
+	var inp = document.getElementsByTagName('input');
+
+	oBtn1.onclick=function(){
+		for(var i =0;i<inp.length;i++){
+			inp[i].checked=true;
+		}
+	}
+	oBtn2.onclick=function(){
+		for(var i =0;i<inp.length;i++){
+			if(inp[i].checked==true){
+				inp[i].checked=false;
+			}else{
+				inp[i].checked=true;
+			}
+		}
+	}
+	oBtn3.onclick=function(){
+		for(var i =0;i<inp.length;i++){
+			inp[i].checked=false;
+		}
+	}
+</script>
+</html>

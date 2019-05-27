@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>12-选项卡.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+			float: left;
+			font-size: 20px;
+			margin:100px 20px;
+		}
+		.li{
+			color:#ff6700;
+			border-bottom: 2px solid #ff6700;
+		}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li class="li">户外</li>
+		<li>家电</li>
+		<li>科技</li>
+		<li>手机</li>
+	</ul>
+</body>
+<script>
+	var oList = document.getElementById('list');
+	var oLi = oList.children;
+
+	for(var i =0;i<oLi.length;i++){
+		oLi[i].onmouseover=function(){
+			for(var j =0;j<oLi.length;j++){
+				oLi[j].className='';
+			}
+			this.className='li';
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>月历</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 380px;
+			height: 750px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			background: #afbcde;
+		}
+		li{
+			list-style: none;
+			float: left;
+			width: 120px;
+			height: 150px;
+			line-height:150px;
+			background:#ccc;
+			margin-right: 10px;
+			text-align: center;
+			margin-bottom:5px;
+			font-size: 28px;
+			background: #000;
+			color:#fff;
+		}
+		li:nth-child(3),
+		li:nth-child(6),
+		li:nth-child(9),
+		li:nth-child(12){
+			margin-right:0px;
+		}
+		#box2{
+			margin:25px;
+		}
+		.li{
+			background: #fff;
+			color:#000;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<ul id="list">
+			<li class="li">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+		</ul>
+		<div id="box2">
+			<h2>1月</h2>
+			<p>睡觉</p>
+		</div>
+	</div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	var oBox2 = document.getElementById('box2');
+	var oList = document.getElementById('list');
+	var oLi = document.getElementsByTagName('li');
+	var arr = ['吃饭','睡觉','打豆豆','踏青','玩游戏','打篮球','吃饭','睡觉','打豆豆','踏青','玩游戏','打篮球'];
+	oBox2.innerHTML='<h2>1月'+'</h2><p>'+arr[0]+'</p>';
+	for(var i=0;i<oLi.length;i++){
+		oLi[i].index=i;
+		oLi[i].onmouseover=function(){
+			for(var j=0;j<oLi.length;j++){
+				oLi[j].className='';
+			}
+			this.className='li';
+			oBox2.innerHTML='<h2>'+(this.index+1)+'月'+'</h2><p>'+arr[this.index]+'</p>';
+		}
+	}
+</script>
+</html>
