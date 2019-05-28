@@ -7,17 +7,22 @@
 <body>
 	<button id="btn">点击生成</button>
 	<ul id="list">
-		<li>1<a href="#">删除</a></li>
-		<li>2<a href="#">删除</a></li>
-		<li>3<a href="#">删除</a></li>
+		<li>1<a class="del" href="#">删除</a></li>
+		<li>2<a class="del" href="#">删除</a></li>
+		<li>3<a class="del" href="#">删除</a></li>
+		<li>3<a class="del" href="#">删除</a></li>
+		<li>3<a class="del" href="#">删除</a></li>
 	</ul>
 </body>
 <script>
 	var oBtn = document.getElementById('btn');
 	var oUl = document.getElementById('list');
 
-	oBtn.onclick=function(){
-		oUl.removeAttribute('li');
+	oUl.onclick=function(ev){
+		var oTarget = ev.target;
+		if(oTarget.className == 'del'){
+			oUl.removeChild(oTarget.parentNode);
+		}
 	}
 </script>
 </html>
