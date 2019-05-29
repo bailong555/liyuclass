@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>90-正则表达式-匹配汉字.html</title>
+</head>
+<body>
+	<textarea name="" id="txt1" cols="30" rows="10"></textarea>
+	<button id="btn">点击</button>
+	<textarea name="" id="txt2" cols="30" rows="10"></textarea>
+</body>
+<script>
+	// var arr ='agasfga安抚反对4649';
+	// var reg = /[a-z]/g;
+	// var reg1 = /[0-9]/g;
+	// var reg2 = /[\u4e00-\u9fa5]/g;
+	// console.log(arr.replace(reg,'*'));
+	// console.log(arr.replace(reg1,'*'));
+	// console.log(arr.replace(reg2,'*'));
+	var oTxt1 = document.getElementById('txt1');
+	var oTxt2 = document.getElementById('txt2');
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick=function(){
+		var aa = /<[^<>]+>/g;
+		oTxt2.innerHTML = oTxt1.value.replace(aa,'*');
+	}
+</script>
+</html>

@@ -30,21 +30,24 @@
 </body>
 <script>
 	function Tab(){
-		var oList = document.getElementById('list');
-		var oLi =document.getElementsByTagName('li');
+		this.oList = document.getElementById('list');
+		this.oLi =document.getElementsByTagName('li');	
+		this.bindEvent();
+	}
+	Tab.prototype.bindEvent=function(){
 		var _this = this; 
-
-		for(var i=0;i<oLi.length;i++){
-			oLi[i].onclick=function(){
+		for(var i=0;i<this.oLi.length;i++){
+			this.oLi[i].onclick=function(){
 				_this.fnclick(this);
 			}
 		}
 	}
-	Tab.prototype.fnclick=function(){
+	Tab.prototype.fnclick=function(oLi){
 		for(var j=0;j<this.oLi.length;j++){
 			this.oLi[j].className='';
 		}
 		oLi.className='li';
 	}
+	new Tab();
 </script>
 </html>

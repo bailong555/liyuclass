@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>92-原子量词案例.html</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<button id="btn">点击</button>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	/*oBtn.onclick=function(){
+		var val = oTxt.value;
+		var str = /^[12]\d{3}$/g;
+		if(str.test(val)){
+			alert('合法')
+		}else{
+			alert('不合法')
+		}
+	}*/
+	/*oBtn.onclick=function(){
+		var val = oTxt.value;
+		var str = /^1[345789]\d{9}$/g;
+		if(str.test(val)){
+			alert('合法')
+		}else{
+			alert('不合法')
+		}
+	}*/
+	oBtn.onclick=function(){
+		var val = oTxt.value;
+		var str = /^\w{6,12}$/g;
+		if(str.test(val)){
+			alert('合法')
+		}else{
+			alert('不合法')
+		}
+	}
+</script>
+</html>

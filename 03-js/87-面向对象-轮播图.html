@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>87-面向对象-轮播图.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		.btn1,.btn2{
+			width: 35px;
+			height: 50px;
+			position:absolute;
+			top: 50%;
+			margin-top:-25px;
+			text-align: center;
+			font-size: 30px;
+			background:rgba(0,0,0,0.3);
+			z-index: 99;
+			color:#fff;
+			cursor:pointer;
+		}
+		.btn1{
+			left: 0;
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
+		}
+		.btn2{
+			right: 0;
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px;
+		}
+		.btns li{
+			width: 24px;
+			height: 24px;
+			background:rgba(0,0,0,0.5);
+			border-radius: 50%;
+			position: absolute;
+			bottom: 20px;
+			right: 50%;
+			margin-right:-12px;
+			cursor:pointer;
+		}
+		.btns li:nth-child(1){
+			right: 54%;
+		}
+		.btns li:nth-child(3){
+			right: 46%;
+		}
+		.btns li.active{
+			background:red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	function slideshow(options){
+		//获取元素
+		this.box = document.getElementById(options.id);
+		this.height = options.height;
+		this.width = options.width;
+		this.img = options.img;
+		this.oUl=null;
+		this.btn1=null;
+		this.btn2=null;
+		this.oUlbtn=null;
+
+		this.now=0;
+
+		this.init();
+		//初始化页面
+		this.bindEvent();
+	}
+	slideshow.prototype.init=function(){
+		this.box.style.position='relative';
+		this.box.style.height=this.height+'px';
+		this.box.style.width=this.width+'px';
+
+		this.oUl = document.createElement('ul');
+		this.oUl.style.width='100%';
+		this.oUl.style.height='100%';
+		for(var i=0;i<this.img.length;i++){
+			var oLi = document.createElement('li');
+			oLi.style.width='100%';
+			oLi.style.height='100%';
+			oLi.style.position='absolute';
+			oLi.style.left=0;
+			oLi.style.top=0;
+			if(i==0){
+				oLi.style.zIndex=9;
+			}
+
+			var oImg=document.createElement('img');
+			oImg.src=this.img[i];
+			oImg.style.width='100%';
+			oImg.style.height='100%';
+			oLi.appendChild(oImg);
+			this.oUl.appendChild(oLi);
+		}
+
+		this.oBtn1 =document.createElement('span');
+		this.oBtn2 =document.createElement('span');
+		this.oBtn1.className='btn1';
+		this.oBtn2.className='btn2';
+		this.oBtn1.innerHTML='&lt';
+		this.oBtn2.innerHTML='&gt';
+
+		this.oUlbtn=document.createElement('ul');
+		this.oUlbtn.className='btns';
+		for(var j=0;j<this.img.length;j++){
+			var oLi1 =document.createElement('li');
+			if(j==0){
+				oLi1.className='active';
+			}
+			oLi1.style.zIndex=99;
+			this.oUlbtn.appendChild(oLi1);
+		}
+
+		this.box.appendChild(this.oUl);
+		this.box.appendChild(this.oBtn1);
+		this.box.appendChild(this.oBtn2);
+		this.box.appendChild(this.oUlbtn);
+	}
+	slideshow.prototype.bindEvent=function(){
+		var _this = this;
+		this.oBtn2.onclick=function(){
+			_this.now++;
+			if(_this.now>_this.img.length-1){
+				_this.now=0;
+			}
+			_this.tab();
+		}
+		this.oBtn1.onclick=function(){
+			_this.now--;
+			if(_this.now<0){
+				_this.now=_this.img.length-1
+			}
+			_this.tab();
+		}
+			for(var j=0;j<this.oUlbtn.children.length;j++){
+				this.oUlbtn.children[j].index=j;
+				this.oUlbtn.children[j].onclick=function(){
+					_this.now=this.index;
+					_this.tab();
+			}
+		}
+		slideshow.prototype.tab=function(){
+			for(var i=0;i<this.oUl.children.length;i++){
+				this.oUl.children[i].style.zIndex=0;
+				this.oUl.children[i].style.opacity=0.2;
+				this.oUlbtn.children[i].style.className='';
+			}
+			this.oUl.children[this.now].style.zIndex='50';
+			this.oUl.children[i].style.opacity=1;
+			this.oUlbtn.children[this.now].style.className='active';
+		}
+	}
+	new slideshow({
+		id:'box',
+		height:400,
+		width:1000,
+		img:['../img/b1.jpg','../img/b2.jpg','../img/b3.jpg'],
+	});
+</script>
+</html>

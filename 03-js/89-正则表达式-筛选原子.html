@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>88-正则表达式-筛选原子.html</title>
+	<title>89-正则表达式-筛选原子.html</title>
 </head>
 <body>
 	<textarea name="" id="txt" cols="30" rows="10"></textarea>
@@ -18,7 +18,10 @@
 		var val = oTxt.value;
 		var oLi = document.createElement('li');
 		oLi.innerHTML = val;
-		oList.insertBefore(oLi,oLis.fristChild);
+		oList.insertBefore(oLi,oList.firstChild);
+		oTxt.value = '';
+		var aa = /淘宝/g;
+		console.log(oLi.innerHTML.replace(aa,'*'));
 	}
 </script>
 </html>
