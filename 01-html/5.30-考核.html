@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5.30-考核.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			text-align:center;
+			line-height:800px;
+		}
+		#txt{
+			width: 200px;
+			height: 25px;
+			font-size:15px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<input type="text" id="txt" autocomplete="off"
+		maxlength="14">
+		<button id="btn">验证用户名</button>
+		<span id="p">只能输入7个汉字或者14个英文字母或数字</span>
+	</div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oTxt = document.getElementById('txt');
+	var oP = document.getElementById('p');
+
+	oBtn.onclick=function(){
+		var val = oTxt.value;
+		var str = /^[\u4e00-\u9fa5]{1,7}$|^\w{1,14}$/g;
+		var str1 = /^\d{1,14}$/g;
+		if(str1.test(val)){
+			oP.innerHTML='不能全部输入数字';
+			oP.style.color='red';
+		}else if(str.test(val)){
+			oP.innerHTML='合法';
+			oP.style.color='blue';
+		}else if(val==''){
+		}else{
+		 	oP.innerHTML='超过输入限制';
+		 	oP.style.color='red';
+		}
+	}
+</script>
+</html>
