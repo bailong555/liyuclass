@@ -5,6 +5,21 @@
 	<title>5.29考核.html</title>
 </head>
 <body>
-	
+	<input type="text" id="txt" autocomplete="off">
+	<button id="btn">邮箱登陆</button>
 </body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+
+	oBtn.onclick=function(){
+		var val = oTxt.value;
+		var str = /^([a-zA-Z0-9])+@([a-zA-Z0-9])+\.[a-z]{2,3}$/g;
+		if(str.test(val)){
+			alert('合法')
+		}else{
+			alert('不合法')
+		}
+	}
+</script>
 </html>

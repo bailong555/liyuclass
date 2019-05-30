@@ -71,11 +71,17 @@
 		this.btn2=null;
 		this.oUlbtn=null;
 
+		this.playtime=options.playtime;
+
 		this.now=0;
 
 		this.init();
 		//初始化页面
 		this.bindEvent();
+
+		if(this.playtime){
+			this.auto();
+		}
 	}
 	slideshow.prototype.init=function(){
 		this.box.style.position='relative';
@@ -118,7 +124,7 @@
 			if(j==0){
 				oLi1.className='active';
 			}
-			oLi1.style.zIndex=99;
+			oLi1.style.zIndex=50;
 			this.oUlbtn.appendChild(oLi1);
 		}
 
@@ -153,12 +159,23 @@
 		slideshow.prototype.tab=function(){
 			for(var i=0;i<this.oUl.children.length;i++){
 				this.oUl.children[i].style.zIndex=0;
-				this.oUl.children[i].style.opacity=0.2;
-				this.oUlbtn.children[i].style.className='';
+				// this.oUl.children[i].style.opacity=0.2;
+				this.oUlbtn.children[i].className='';
 			}
 			this.oUl.children[this.now].style.zIndex='50';
-			this.oUl.children[i].style.opacity=1;
-			this.oUlbtn.children[this.now].style.className='active';
+			// this.oUl.children[i].style.opacity=1;
+			this.oUlbtn.children[this.now].className='active';
+		}
+		slideshow.prototype.auto=function(){
+			var _this = this;
+			var timer = 0;
+			timer = setInterval(this.oBtn2.onclick,this.playtime);
+				this.box.onmouseover=function(){
+					clearInterval(timer);
+				}
+				this.box.onmouseout=function(){
+					timer = setInterval(_this.oBtn2.onclick,_this.playtime);
+				}
 		}
 	}
 	new slideshow({
@@ -166,6 +183,7 @@
 		height:400,
 		width:1000,
 		img:['../img/b1.jpg','../img/b2.jpg','../img/b3.jpg'],
+		playtime:1500,
 	});
 </script>
 </html>

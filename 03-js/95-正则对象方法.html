@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>95-正则对象方法.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = 'a2019-05-29b2019-05-30c';
+	var str = /(?<nian>\d{4})-(?<yue>\d{2})-(?<ri>\d{2})/g;
+
+	/*console.log(str.test(arr));
+	console.log(str.lastIndex);
+	console.log(str.test(arr));
+	console.log(str.lastIndex);
+	console.log(str.test(arr));*/
+	console.log(str.lastIndex);
+	console.log(str.exec(arr));
+	console.log(str.lastIndex);
+	console.log(str.exec(arr));
+	console.log(str.lastIndex);
+	console.log(str.exec(arr));
+	console.log(str.lastIndex);
+</script>
+</html>
