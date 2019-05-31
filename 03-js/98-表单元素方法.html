@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>98-表单元素方法.html</title>
+</head>
+<body>
+	<form action="">
+		用户名:<input type="text" name="username" autocomplete="off" maxlength="14">
+		<p id="wz"></p>
+	</form>
+</body>
+<script>
+	var oForm = document.forms[0];
+	var oInp = oForm.username;
+	var oP = document.getElementById('wz');
+	oInp.onfocus=function(){
+		oP.innerHTML='请输入7-14位有效字符';
+	}
+	oInp.onblur=function(){
+		var val = oInp.value;
+		var str = /^.{7,14}$/g;
+		if(!str.test(val)){
+			oP.innerHTML='输入有误';
+		}else{
+			oP.innerHTML='合法';
+		}
+	}
+</script>
+</html>
