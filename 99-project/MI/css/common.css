@@ -18,3 +18,41 @@ li{
 a{
 	text-decoration:none;
 }
+.loading{
+	position: absolute;
+	top: 40px;
+	left: 148px;
+	width: 2px;
+	height: 25px;
+	background: #ff6700;
+}
+.loading:after,.loading:before{
+	position: absolute;
+	top:0px;
+	left:0px;
+	width: 2px;
+	height: 25px;
+	background: #ff6700;
+	content: '';
+	animation: abc 0.5s linear 0.3s infinite;
+}
+.loading:after{
+	left:-10px;
+	transform: scale(1, 0.5);
+	animation: abc 0.5s linear 0.3s infinite;
+}
+.loading:before{
+	left:10px;
+	transform: scale(1, 0.7);
+	animation: abc 0.5s linear 0.5s infinite;
+}
+@keyframes abc{
+	from {
+		transform: scale(1, 0.5);
+		opacity: 0.5;
+	}
+	to{
+		transform: scale(1);
+		opacity: 1;
+	}
+}

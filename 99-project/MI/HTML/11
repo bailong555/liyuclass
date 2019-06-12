@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.loading{
+			width: 1px;
+			height: 3px;
+			background: #ff6700;
+		}
+	</style>
+</head>
+<body>
+	<div class="loading"></div>
+</body>
+</html>

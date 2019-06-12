@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数节流.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+<script>
+	var i = 0;
+	function throttle(fn,interval){
+		var time1 = Date.now();
+		return function(){
+			var time2 = Date.now();
+			if(time2-time1>interval){
+				fn();
+				time1 = Date.now();
+			}
+		}
+	}
+	window.onscroll = throttle(function(){
+		console.log(i++)
+	},1000);
+</script>
+</html>

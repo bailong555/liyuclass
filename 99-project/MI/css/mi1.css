@@ -28,6 +28,7 @@
 	font-size:8px;
 }
 .top .cart{
+	position:relative;
 	width: 120px;
 	float: right;
 	line-height:40px;
@@ -40,6 +41,15 @@
 .top .cart:hover{
 	color:#ff6700;
 	background:#fff;
+}
+.top .cart-box{
+	position:absolute;
+	right: 0;
+	background: #fff;
+	width: 300px;
+	height:0px;
+	line-height:100px;
+	border: 1px solid #ccc;
 }
 .top .user-info{
 	float: right;

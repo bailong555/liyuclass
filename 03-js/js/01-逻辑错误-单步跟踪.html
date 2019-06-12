@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01-逻辑错误-单步跟踪.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function num(num){
+		var number = 0;
+		for(var i=0;i<num;i++){
+			number += i;
+		}
+		return number;
+	}
+	debugger
+	console.log(num(2));
+</script>
+</html>
