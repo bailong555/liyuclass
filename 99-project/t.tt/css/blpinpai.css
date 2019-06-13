@@ -52,10 +52,10 @@ body{
 .lg a:last-child{
 	right:80px;
 }
-.lg .gwc:hover + .a-1{
+.logo .gwc:hover + .a-1{
 	display:block;
 }
-.lg .a-1{
+.logo .a-1{
 	width: 350px;
 	height: 300px;
 	border-radius: 20px;
@@ -66,18 +66,18 @@ body{
 	text-align:center;
 	display:none;
 }
-.lg .a-1 i{
+.logo .a-1 i{
 	font-size: 60px;
 	color:#ccc;
 	position:absolute;
 	top:75px;
 	right:148px;
 }
-.lg .a-1 .a-01{
+.logo .a-1 .a-01{
 	font-size:20px;
 	margin-top:170px;
 }
-.lg .a-1 .a-02{
+.logo .a-1 .a-02{
 	font-size:12px;
 	margin-top:10px;
 	color:#ccc;
@@ -116,37 +116,63 @@ body{
 	top: 73px;
 	right:225px;
 }
-.logo #fix{
+ #fix{
+	border-top:1px solid #ccc;
+	position: absolute;
+	top: 120px;
 	width: 100%;
-	height: 300px;
-	background: #aabbcc;
+	height:0px;
+	background: #fff;
+	opacity: 0;
+	transition: all 0.3s;
 }
-.logo #fix ul li{
+ #fix ul li{
+	margin-top: 30px;
 	text-align: center;
-	width:100px;
+	width:200px;
 	float: left;
-	margin-left:100px;
 	color:#666;
 	font-size: 14px;
 }
-.logo #fix ul li p{
-	margin-top: 10px;
+ #fix ul li p{
+	float: left;
 }
-.logo #fix ul li:nth-child(1){
-	margin-left: 425px;
+ #fix ul li div{
+	width: 200px;
+	height: 25px;
+	margin-top: 30px;
 }
-.logo #fix ul li:nth-child(2){
-	margin-left: 0px;
-	width: 450px;
+ #fix ul li div img{
+	margin-left: -80px;
+	vertical-align: middle;
+}
+ #fix ul li div span{
+	width: 30px;
+	color:black;
+	font-size: 15px;
+	margin-left:10px;
+}
+ #fix ul li:nth-child(1){
+	margin-left: 450px;
+}
+ #fix ul .chx .sh{
+	margin-left: 20px;
+}
+ #fix ul .chx .sh span{
+	margin-left: 5px;
+}
+ #fix ul li .x{
+	margin-left: -8px;
 }
 .logo .qp{
 	width: 100%;
-	height: 60px;
+	height: 0px;
 	background:#fff;
 	position:fixed;
-	top:75px;
-	display:none;
+	top:0px;
+	opacity:0;
 	z-index: 9;
+	transition: all 0.3s;
 }
 .logo .qp .gd{
 	position:absolute;
@@ -158,8 +184,22 @@ body{
 	top: 20px;
 	right:440px;
 }
+.logo .qp .a-1{
+	width: 350px;
+	height: 300px;
+	border-radius: 20px;
+	background:#ececec;
+	position:absolute;
+	top:50px;
+	right:234px;
+	text-align:center;
+	display:none;
+}
 .logo .qp .fix-1 li{
 	line-height:60px;
+}
+.logo .gd:hover + .a-1{
+	display:block;
 }
 /* .logo结束 */
 .top{
