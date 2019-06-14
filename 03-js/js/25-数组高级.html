@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组高级</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [20,30,40,50,60,70,80,90];
+
+	// var newArr = arr.forEach(function(value,index){
+	// 	console.log(value,index);
+	// })
+
+	// var newArr = arr.map(function(value,index){
+	// 	return value+10;
+	// })
+	// console.log(newArr);
+	// var newArr = arr.filter(function(value,index){
+	// 	return value>50;
+	// })
+	// console.log(newArr);
+	var newArr = arr.every(function(value,index){
+		return value>10;
+	})
+	console.log(newArr);
+	// var newArr = arr.some(function(value,index){
+	// 	return value>120;
+	// })
+	// console.log(newArr);
+</script>
+</html>
