@@ -93,26 +93,42 @@ var oL = document.querySelectorAll('.top .content .rmdiv .rmnr .jg .l');
 // 	}
 // }
 oH[0].onmouseover=function(){
+	this.className="h div";
+	oL[0].className="l";
 	oLiImg1.src="../bl-images/pinpai/sj2.png";
 }
 oL[0].onmouseover=function(){
+	this.className="l div";
+	oH[0].className="h";
 	oLiImg.src="../bl-images/pinpai/sj1.png";
 }
 oH[1].onmouseover=function(){
+	this.className="h div";
+	oL[1].className="l";
 	oLiImg1.src="../bl-images/pinpai/sj2.png";
 }
 oL[1].onmouseover=function(){
+	this.className="l div";
+	oH[1].className="h";
 	oLiImg1.src="../bl-images/pinpai/sj1.png";
 }
 oH[2].onmouseover=function(){
+	this.className="h div";
+	oL[2].className="l";
 	oLiImg2.src="../bl-images/pinpai/sj2.png";
 }
 oL[2].onmouseover=function(){
+	this.className="l div";
+	oH[2].className="h";
 	oLiImg2.src="../bl-images/pinpai/sj1.png";
 }
 oH[3].onmouseover=function(){
+	this.className="h div";
+	oL[3].className="l";
 	oLiImg3.src="../bl-images/pinpai/sj2.png";
 }
 oL[3].onmouseover=function(){
+	this.className="l div";
+	oH[3].className="h";
 	oLiImg3.src="../bl-images/pinpai/sj1.png";
 }
