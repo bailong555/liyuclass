@@ -25,17 +25,18 @@ a{
 	bottom:109px;
 	left: 119px;
 }
-#fixx{
+#fixbox{
 	border-top:1px solid #ccc;
 	position: absolute;
 	top: 120px;
 	width: 100%;
 	height:0px;
 	background: #fff;
-	opacity:0;
-	transition: all 0.4s;
 	z-index: 9;
 }
+ #fixx{
+ 	display: none;
+ }
  #fixx li{
 	margin-top: 30px;
 	text-align: center;
@@ -73,4 +74,31 @@ a{
 }
  #fixx li .x{
 	margin-left: -8px;
+}
+#fixsj{
+	/* border-top:1px solid #ccc;
+	position: absolute;
+	top: 120px;
+	width: 100%;
+	height:300px;
+	background: #fff;
+	z-index: 9; */
+	display: none;
+}
+#fixsj li{
+	width: 150px;
+	text-align: center;
+	float: left;
+	margin-top:55px;
+}
+#fixsj li h5{
+	margin-top:15px;
+	margin-bottom:10px;
+}
+#fixsj li p{
+	color: red;
+	font-weight: bold;
+}
+#fixsj li:nth-child(1){
+	margin-left:35%;
 }

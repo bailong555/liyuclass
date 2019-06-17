@@ -1,20 +1,16 @@
 // logo部分
 var oFix = document.querySelector('.logo .fix .fix-1');
 var oBtnn = oFix.children;
+var oFixbox = document.getElementById('fixbox');
 var oFix2 = document.getElementById('fixx');
 for(var i=0;i<oBtnn.length;i++){
+	oBtnn[i].index=i;
 	oBtnn[i].onmouseover=function(){
-		oFix2.style.opacity=1;
-		oFix2.style.height='300px';
+		for(var j=0;j<oFixbox.length;j++){
+			oFixbox.style.height='300px';
+			oFix2.style.display='block';
+		}
 	}
-}
-oFix2.onmouseover=function(){
-		oFix2.style.opacity=1;
-		oFix2.style.height='300px';
-	}
-oFix2.onmouseout=function(){
-		oFix2.style.opacity=0;
-		oFix2.style.height='0px';
 }
 //顶部固定
 var oFix3 = document.querySelector('.logo .qp');
