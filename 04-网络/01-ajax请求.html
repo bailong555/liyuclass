@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01-ajax请求.html</title>
+</head>
+<body>
+	<button id="btn">请求数据</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick=function(){
+		var oAjax = new XMLHttpRequest();
+
+		oAjax.open('GET',"http://127.0.0.1:3000",true);
+
+		oAjax.send('{"name":"tom","age":18}');
+
+		oAjax.onreadystatechange=function(){
+			if(oAjax.readyState == 4){
+				if(oAjax.status == 200){
+					console.log(oAjax.responseText);
+					var strToObj = JSON.parse(oAjax.responseText);
+					console.log(strToObj);
+				}
+			}
+		}
+	}
+</script>
+</html>

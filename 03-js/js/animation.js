@@ -1,4 +1,4 @@
-50//匀速动画封装函数
+//匀速动画封装函数
 function animation(obj,attr,iTarget){
 	//防止用户多次点击
 	clearInterval(obj.timer);
@@ -11,9 +11,9 @@ function animation(obj,attr,iTarget){
 		}
 		//判断速度的取值
 		if(currentVal < iTarget){
-			iSpeed = 50;
+			iSpeed = 10;
 			}else{
-				iSpeed = -50;
+				iSpeed = -10;
 			}
 			//动画的终止条件
 		if(Math.abs(iTarget - currentVal) < Math.abs(iSpeed)){
