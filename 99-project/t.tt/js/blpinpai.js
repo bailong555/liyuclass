@@ -15,10 +15,6 @@ oFixbox.onmouseover=function(){
 		oFixbox.style.height='300px';
 		oFixHome.style.display='block';
 }
-oFixbox.onmouseout=function(){
-		oFixbox.style.height='0px';
-		oFixHome.style.display='none';
-}
 oBtnn[1].onmouseover=function(){
 	oFixGf.style.display='none';
 	oFixHome.style.display='none';
@@ -27,11 +23,7 @@ oBtnn[1].onmouseover=function(){
 }
 oFixbox.onmouseover=function(){
 		oFixbox.style.height='300px';
-		oFixPhone.style.display='block';
-}
-oFixbox.onmouseout=function(){
-		oFixbox.style.height='0px';
-		oFixPhone.style.display='none';
+		// oFixPhone.style.display='block';
 }
 oBtnn[2].onmouseover=function(){
 	oFixHome.style.display='none';
@@ -41,10 +33,13 @@ oBtnn[2].onmouseover=function(){
 }
 oFixbox.onmouseover=function(){
 		oFixbox.style.height='300px';
-		oFixGf.style.display='block';
+		// oFixGf.style.display='block';
 }
+//移除消失
 oFixbox.onmouseout=function(){
 		oFixbox.style.height='0px';
+		oFixPhone.style.display='none';
+		oFixHome.style.display='none';
 		oFixGf.style.display='none';
 }
 //顶部固定
