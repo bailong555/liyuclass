@@ -2,15 +2,50 @@
 var oFix = document.querySelector('.logo .fix .fix-1');
 var oBtnn = oFix.children;
 var oFixbox = document.getElementById('fixbox');
-var oFix2 = document.getElementById('fixx');
-for(var i=0;i<oBtnn.length;i++){
-	oBtnn[i].index=i;
-	oBtnn[i].onmouseover=function(){
-		for(var j=0;j<oFixbox.length;j++){
-			oFixbox.style.height='300px';
-			oFix2.style.display='block';
-		}
-	}
+var oFixHome = document.getElementById('fixx');
+var oFixPhone = document.getElementById('fixsj');
+var oFixGf = document.getElementById('fixgf');
+oBtnn[0].onmouseover=function(){
+	oFixGf.style.display='none';
+	oFixPhone.style.display='none';
+	oFixbox.style.height='300px';
+	oFixHome.style.display='block';
+}
+oFixbox.onmouseover=function(){
+		oFixbox.style.height='300px';
+		oFixHome.style.display='block';
+}
+oFixbox.onmouseout=function(){
+		oFixbox.style.height='0px';
+		oFixHome.style.display='none';
+}
+oBtnn[1].onmouseover=function(){
+	oFixGf.style.display='none';
+	oFixHome.style.display='none';
+	oFixbox.style.height='300px';
+	oFixPhone.style.display='block';
+}
+oFixbox.onmouseover=function(){
+		oFixbox.style.height='300px';
+		oFixPhone.style.display='block';
+}
+oFixbox.onmouseout=function(){
+		oFixbox.style.height='0px';
+		oFixPhone.style.display='none';
+}
+oBtnn[2].onmouseover=function(){
+	oFixHome.style.display='none';
+	oFixbox.style.height='300px';
+	oFixPhone.style.display='none';
+	oFixGf.style.display='block';
+}
+oFixbox.onmouseover=function(){
+		oFixbox.style.height='300px';
+		oFixGf.style.display='block';
+}
+oFixbox.onmouseout=function(){
+		oFixbox.style.height='0px';
+		oFixGf.style.display='none';
 }
 //顶部固定
 var oFix3 = document.querySelector('.logo .qp');

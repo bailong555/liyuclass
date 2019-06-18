@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-全选和全不选.html</title>
+</head>
+<body>
+	<button id="off">全选</button>
+	<button id="on">全不选</button>
+	<button id="fx">反选</button>
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+</body>
+<script>
+	var oBtn1 = document.getElementById('off');
+	var oBtn2 = document.getElementById('on');
+	var oBtn3 = document.getElementById('fx');
+
+	var oInput = document.querySelectorAll('[type="checkbox"]');
+
+	oBtn1.onclick = function(){
+		for(var i =0;i<oInput.length;i++){
+			oInput[i].checked=true;
+		}
+	}
+	oBtn2.onclick = function(){
+		for(var i =0;i<oInput.length;i++){
+			oInput[i].checked="";
+		}
+	}
+	oBtn3.onclick = function(){
+		for(var i =0;i<oInput.length;i++){
+			if(oInput[i].checked==true){
+				oInput[i].checked=false;
+			}else{
+				oInput[i].checked=true;
+			}
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变元素样式.html</title>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+</body>
+<script>
+	var aLi = document.getElementsByTagName('li');
+
+	// aLi[1].style.color = 'red';
+	for(var a = 0;a < aLi.length;a++){
+		aLi[a].style.color = 'red';
+	}
+</script>
+</html>
