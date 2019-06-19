@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05.jQuery常见静态方法.html</title>
+</head>
+<body>
+	
+</body>
+<script src='../jQuery.js'></script>
+<script>
+	var arr = [11,22,33];
+	$.each(arr,function(index,value){
+		// return value;
+		console.log(index,value);
+	});
+	// arr.forEach(function(index,value){
+	// 	// return value;
+	// 	console.log(index,value);
+	// })
+	$.map(arr,function(value,index){
+		console.log(value,index);
+	})
+	console.log(arr);
+</script>
+</html>

@@ -1,4 +1,4 @@
-50//匀速动画封装函数
+//匀速动画封装函数
 function animation(obj,attr,iTarget){
 	//防止用户多次点击
 	clearInterval(obj.timer);
@@ -33,7 +33,7 @@ function animation(obj,attr,iTarget){
 				obj.style[attr] = currentVal + iSpeed + "px";
 			}
 		}
-	},30)
+	},0)
 }
 
 //获取垂直方向上的滚动距离
