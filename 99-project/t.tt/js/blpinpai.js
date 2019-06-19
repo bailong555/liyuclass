@@ -207,6 +207,37 @@ oBtns[1].onclick=function(){
 	oBtns[0].style.background='#fff';
 	this.style.background='gray';
 }
+//购物车部分
+var oCart = document.getElementById('cart');
+var oCartt = document.getElementById('cartt');
+var timer = '';
+oCart.onmouseover=function(){
+	timer = setTimeout(function(){
+		oCartt.style.display='block';
+		oCartt.style.opacity=1;
+	},100)
+}
+oCart.onmouseout=function(){
+	timer = setTimeout(function(){
+		oCartt.style.display='none';
+		oCartt.style.opacity=0;
+	},100)
+}
+var oShop = document.getElementById('shop');
+var oShopping = document.getElementById('shopping');
+var timer = '';
+oShop.onmouseover=function(){
+	timer = setTimeout(function(){
+		oShopping.style.display='block';
+		oShopping.style.opacity=1;
+	},100)
+}
+oShop.onmouseout=function(){
+	timer = setTimeout(function(){
+		oShopping.style.display='none';
+		oShopping.style.opacity=0;
+	},100)
+}
 //热门商品部分
 var oBtnLeft = document.getElementById('btnl');
 var oBtnRight = document.getElementById('btnr');
@@ -227,14 +258,12 @@ oBtnLeft.onclick=function(){
 }
 //更换图片部分
 var oH5 = document.querySelectorAll('.top .content .rmdiv .rmnr .jg .h1');
-var oLi = document.querySelectorAll('.top .content .rmdiv .rmnr .jg');
 var oLiImg = oH5[0].previousElementSibling;
 var oLiImg1 = oH5[1].previousElementSibling;
 var oLiImg2 = oH5[2].previousElementSibling;
 var oLiImg3 = oH5[3].previousElementSibling;
 var oA = document.querySelectorAll('.top .content .rmdiv .rmnr .jg .h');
 var oB = document.querySelectorAll('.top .content .rmdiv .rmnr .jg .l');
-
 oA[0].onmouseover=function(){
 	this.className="h div";
 	oB[0].className="l";
@@ -305,12 +334,12 @@ oL[0].onmouseover=function(){
 oH[1].onmouseover=function(){
 	this.className="h div";
 	oL[1].className="l";
-	oLiImgw.src="../bl-images/pinpai/sj2.png";
+	oLiImgw.src="../bl-images/pinpai/sj1.png";
 }
 oL[1].onmouseover=function(){
 	this.className="l div";
 	oH[1].className="h";
-	oLiImgw.src="../bl-images/pinpai/sj1.png";
+	oLiImgw.src="../bl-images/pinpai/sj2.png";
 }
 oH[2].onmouseover=function(){
 	this.className="h div";
@@ -401,4 +430,25 @@ oL[11].onmouseover=function(){
 	this.className="l div";
 	oH[12].className="h";
 	oLiImg9.src="../bl-images/pinpai/rb.png";
+}
+//照片阴影
+var oLi = document.querySelectorAll('.top .content .rmdiv .rmnr .jg');
+for(var i=0;i<oLi.length;i++){
+	oLi[i].onmouseover=function(){
+		this.style.boxShadow='';
+		this.style.boxShadow='0px 0px 15px rgba(0,0,0,0.3) inset';
+	}
+	oLi[i].onmouseout=function(){
+		this.style.boxShadow='';
+	}
+}
+var oLii = document.querySelectorAll('.head .content .sjpj .pj .pj-nr');
+for(var i=0;i<oLii.length;i++){
+	oLii[i].onmouseover=function(){
+		this.style.boxShadow='';
+		this.style.boxShadow='0px 0px 15px rgba(0,0,0,0.3) inset';
+	}
+	oLii[i].onmouseout=function(){
+		this.style.boxShadow='';
+	}
 }
