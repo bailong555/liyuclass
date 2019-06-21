@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>17.jQueryDOM添加节点.html</title>
+</head>
+<body>
+	<button>插入1</button>
+	<button>插入2</button>
+	<button>插入3</button>
+	<button>插入4</button>
+	<button>插入5</button>
+	<button>插入6</button>
+	<ul>
+		<li>这是一个li</li>
+		<li>这是一个li</li>
+		<li>这是一个li</li>
+	</ul>
+</body>
+<script src='../jQuery.js'></script>
+<script>
+	$('button').eq(0).on('click',function(){
+		var oLi = $('<li>新的</li>')
+		$('ul').append(oLi);
+	})
+	$('button').eq(1).on('click',function(){
+		var oLi = $('<li>新的</li>')
+		oLi.append($('ul'));
+	})
+</script>
+</html>

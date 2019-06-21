@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件委托</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			width: 100%;
+			height: 100px;
+			background: #feabdc;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<button>点击生成</button>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+<script src='../jQuery.js'></script>
+<script>
+	function fn(){
+		alert('li li li')
+	}
+	// $('ul').on('click','li',fn);
+	$('ul').delegate('li','click',fn);
+	// $('li').on('click',fn);
+	$('button').on('click',function(){
+		var oLi = $("<li>新的li</li>")[0];
+		$('ul')[0].appendChild(oLi);
+	})
+</script>
+</html>

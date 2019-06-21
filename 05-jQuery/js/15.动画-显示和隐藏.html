@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>15.动画-显示和隐藏.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<button>切换</button>
+	<button>淡入到固定值</button>
+	<div></div>
+</body>
+<script src='../jQuery.js'></script>
+<script>
+	/*
+	$('button').eq(0).on('click',function(){
+		$('div').show(1000,function(){
+			alert('1')
+		})
+	})
+	$('button').eq(1).on('click',function(){
+		$('div').hide(1000,function(){
+			alert('1')
+		})
+	})
+	$('button').eq(2).on('click',function(){
+		$('div').toggle(1000,function(){
+			alert('1')
+		})
+	})
+	$('button').eq(0).on('click',function(){
+		$('div').slideDown(1000,function(){
+			alert('1')
+		})
+	})
+	$('button').eq(1).on('click',function(){
+		$('div').slideUp(1000,function(){
+			alert('1')
+		})
+	})
+	$('button').eq(2).on('click',function(){
+		$('div').slideToggle(1000,function(){
+			alert('1')
+		})
+	})*/
+	$('button').eq(0).on('click',function(){
+		$('div').fadeIn(1000,function(){
+			alert('1')
+		})
+	})
+	$('button').eq(1).on('click',function(){
+		$('div').fadeOut(1000,function(){
+			alert('1')
+		})
+	})
+	$('button').eq(2).on('click',function(){
+		$('div').fadeToggle(1000,function(){
+			alert('1')
+		})
+	})
+	$('button').eq(3).on('click',function(){
+		$('div').fadeTo(1000,0.5,function(){
+			alert('1')
+		})
+	})
+</script>
+</html>

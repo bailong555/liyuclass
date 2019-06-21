@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>09.jQuery操作尺寸.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			background: #abcdef;
+			padding:10px;
+			border: 10px solid #000;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background: #fedcba;
+			padding:20px;
+			border: 20px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">1</div>
+	<div class="box2">2</div>
+</body>
+<script src='../jQuery.js'></script>
+<script>
+	console.log($('div').width());
+	console.log($('div').height());
+	$('div').width(150);
+	$('div').height(150);
+	console.log($('div').innerWidth());
+	console.log($('div').innerHeight());
+	$('div').innerWidth(150);
+	$('div').innerHeight(150);
+	console.log($('div').outerWidth());
+	console.log($('div').outerHeight());
+	$('div').outerWidth(150);
+	$('div').outerHeight(150);
+</script>
+</html>

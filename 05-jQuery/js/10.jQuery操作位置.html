@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10.jQuery操作位置.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 400px;
+			height: 400px;
+			position: relative;
+			top: 200px;
+			left: 700px;
+			border: 1px solid #000;
+			overflow: hidden;
+		}
+		.son{
+			width: 200px;
+			height: 200px;
+			background:#bfcfa0;
+		/* 	position: absolute;
+			top: 200px;
+			left: 200px; */
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">点击获取</button>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+</body>
+<script src='../jQuery.js'></script>
+<script>
+	var oBtn = $('#btn');
+	 oBtn.onclick=function(){
+	console.log($('.son').offset());
+	$('.son').offsetTop(500);
+	$('.son').offsetLeft(500);
+}
+	/*
+	console.log($('.son').position());
+	$('.son').position();
+	*/
+	// console.log($('.son').scrollTop());
+	// console.log($('.son').scrollLeft());
+	// var oBtn = $('#btn');
+	// oBtn.onclick=function(){
+	// 	$('.father').scrollTop(2000);
+	// 	$('.father').scrollLeft(2000);
+	// }
+</script>
+</html>

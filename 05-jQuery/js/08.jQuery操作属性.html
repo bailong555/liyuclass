@@ -19,26 +19,44 @@
 		.box3{
 			background:#abcdfe;
 		}
+		.box4{
+			width: 100px;
+			height: 100px;
+			background: #facbed;
+		}
+		.box5{
+			width: 200px;
+			height: 200px;
+			background: #abfedc;
+		}
 	</style>
 </head>
 <body>
-	<input type="text" value="111">
-	<button id="btn">切换</button>
-	<div>1</div>
-	<div>2</div>
+	<!-- <input type="text" value="111"> -->
+	<!-- <button id="btn">切换</button> -->
+	<div class="box4">1</div>
+	<div class="box5">2</div>
 </body>
 <script src='../jQuery.js'></script>
 <script>
-	$('div').addClass('box1 box2 box3');
-	// $('div').prop('class');
-	// // $('div').removeClass('box1 box2 box3');
-	// console.log($('div').attr('class'));
-	// var oBtn = document.getElementById('btn');
-	// oBtn.onclick=function(){
-	// 	$('div').toggleClass('box1 box2 box3');
-	// }
-	// console.log($('div').html('<h2>555</h2>'));
+	/*$('div').addClass('box1 box2 box3');
+	$('div').prop('class');
+	// $('div').removeClass('box1 box2 box3');
+	console.log($('div').attr('class'));
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick=function(){
+		$('div').toggleClass('box1 box2 box3');
+	}
+	console.log($('div').html('<h2>555</h2>'));
 	console.log($('div').text('<h2>555</h2>'));
-	console.log($('input').val('this is a peg'));
+	console.log($('input').val('this is a peg'));*/
+	// $('div').css('width',300).css('height',300);
+	$('div').css({
+		width:300,
+		height:300,
+		textAlign:'center',
+		lineHeight:'300px'
+		})
+	// console.log($('div').hasClass('box4'));
 </script>
 </html>
