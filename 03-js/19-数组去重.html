@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>19-数组去重.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [1,2,3,4,5,6,5,4,1,2,3,];
+	console.log(arr);
+	var tmp = [];
+	for(var i=0;i<arr.length;i++){
+		/*
+		var isTrue = false;
+		for(var j=0;j<tmp.length;j++){			
+			if(arr[i] == arr[j]){
+				isTrue = true;
+				break;
+			}
+		}
+			if(!isTrue){
+				tmp.push(arr[i]);
+			}*/
+		if(tmp.indexOf(arr[i],0) == -1){
+			tmp.push(arr[i]);
+		}
+	}
+	console.log(tmp);
+</script>
+</html>

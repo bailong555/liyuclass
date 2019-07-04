@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>17-数组排序.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [32,19,55,68,24,26,37,91,9];
+	var tmp = 0;
+	for(var i=0;i<arr.length;i++){
+		for(var j=i+1;j<arr.length;j++){
+			if(arr[i]>arr[j]){
+				tmp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=tmp;
+			}
+		}
+	}
+	console.log(arr);
+</script>
+</html>

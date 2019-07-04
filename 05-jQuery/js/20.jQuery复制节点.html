@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>20.jQuery复制节点.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<button>复制1</button>
+	<button>复制2</button>
+	<div>盒子</div>
+</body>
+<script src='../jQuery.js'></script>
+<script>
+	$('div').on('click',function(){
+		alert('1')
+	})
+	$('button').eq(0).on('click',function(){
+		var $div = $('div').eq(0).clone(false);
+		$('body').append($div);
+	})
+	$('button').eq(1).on('click',function(){
+		var $div = $('div').eq(0).clone(true);
+		$('body').append($div);
+	})
+</script>
+</html>

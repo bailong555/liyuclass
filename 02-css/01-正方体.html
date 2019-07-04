@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01-正方体.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 200px;
+			height: 200px;
+			margin:300px auto;
+			position: relative;
+			transform:rotateX(0deg) rotateY(0deg);
+			transform-style: preserve-3d;
+			border: 1px solid #000;
+		}
+		li{
+			height: 200px;
+			width: 200px;
+			text-align: center;
+			line-height: 200px;
+			list-style: none;
+			position: absolute;
+			left: 50%;
+			margin-left: -100px;
+			top: 50%;
+			margin-top: -100px;
+		}
+		.a1{
+			background: #aaa;
+			transform:translateZ(100px);
+		}
+		.a2{
+			background: #bbb;
+			transform:translateZ(-100px) rotateX(180deg);
+		}
+		.a3{
+			background: #ccc;
+			transform:translateX(100px) rotateY(90deg);
+		}
+		.a4{
+			background: #ddd;
+			transform:translateX(-100px) rotateY(270deg);
+		}
+		.a5{
+			background:skyblue;
+			transform:translateY(100px) rotateX(90deg);
+		}
+		.a6{
+			background:pink;
+			transform:translateY(-100px) rotateX(90deg);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="a1">1</li>
+		<li class="a2">2</li>
+		<li class="a3">3</li>
+		<li class="a4">4</li>
+		<li class="a5">5</li>
+		<li class="a6">6</li>
+	</ul>
+</body>
+</html>

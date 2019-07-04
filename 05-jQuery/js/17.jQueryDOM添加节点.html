@@ -20,12 +20,28 @@
 <script src='../jQuery.js'></script>
 <script>
 	$('button').eq(0).on('click',function(){
-		var oLi = $('<li>新的</li>')
+		var oLi = $('<li>新的</li>');
 		$('ul').append(oLi);
 	})
 	$('button').eq(1).on('click',function(){
-		var oLi = $('<li>新的</li>')
-		oLi.append($('ul'));
+		var oLi = $('<li>新的</li>');
+		oLi.appendTo($('ul'));
+	})
+	$('button').eq(2).on('click',function(){
+		var oLi = $('<li>新的</li>');
+		$('ul').prepend(oLi);
+	})
+	$('button').eq(3).on('click',function(){
+		var oLi = $('<li>新的</li>');
+		oLi.prependTo($('ul'));
+	})
+	$('button').eq(4).on('click',function(){
+		var oLi = $('<li>新的</li>');
+		$('li').eq(1).after(oLi);
+	})
+	$('button').eq(5).on('click',function(){
+		var oLi = $('<li>新的</li>');
+		$('li').eq(1).before(oLi);
 	})
 </script>
 </html>
