@@ -1,0 +1,32 @@
+.container{
+	width: 1600px;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: border-box;
+}
+
+/*清除浮动*/
+.clearfix:after{
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	content: "";
+}
+.clearfix{
+	*zoom: 1;
+}
+li{
+	list-style: none;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+a{
+	text-decoration: none;
+	font-size:14px;
+	color: black;
+}
