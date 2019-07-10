@@ -25,20 +25,22 @@
 	margin-left:10px;
 	transition: all 0.3s;
 }
-.logo-right li:hover .kt{
-	display: block;
-}
-.logo-right li:hover i{
-	transform: rotate(180deg);
-}
+
 .logo .kt{
 	height: 110px;
 	background: #fff;
 	position:absolute;
+	z-index: 9;
 	display: none;
 }
 .logo .kt li{
 	font-size: 14px;
+}
+.menu-active .kt{
+	display: block;
+}
+.menu-active i{
+	transform: rotate(180deg);
 }
 /* 顶部区域结束 */
 /* 头部区域开始 */
@@ -47,7 +49,7 @@
 }
 .top img{
 	position: absolute;
-	top: 66px;
+	top: 30px;
 	left: 175px;
 }
 .top .con{
@@ -67,12 +69,29 @@
 	position: absolute;
 	right: 547px;
 	border: none;
+	outline: none;
+	cursor: pointer;
+}
+.txt-content{
+	width: 683px;
+	background:#fff;
+	color: #000;
+	position: absolute;
+	top: 86px;
+	left:460px;
+	border: 1px solid #f3f5f7;
+	box-sizing: border-box;
+	border-top: none;
+	z-index: 2;
+}
+.txt-content li{
+	margin:10px;
+	cursor: pointer;
 }
 /* 头部区域结束 */
 /* 焦点区域开始 */
 .focus{
 	height: 600px;
-	background: tomato;
 }
 .focus-top{
 	width: 100%;
@@ -86,6 +105,96 @@
 }
 .focus-top li:first-child{
 	margin-left:500px;
+}
+.Category{
+	height: 550px;
+	width: 240px;
+	color:#fff;
+	background: tomato;
+	position: absolute;
+	left: 50px;
+}
+.Category dt{
+	height: 58px;
+	line-height: 58px;
+	margin-left: 20px;
+}
+.Category dd{
+	height: 42px;
+	margin-left: 20px;
+}
+.slideshow{
+	width: 880px;
+	height: 540px;
+	overflow: hidden;
+	position: absolute;
+	top: 10px;
+	left: 310px;
+}
+.slideshow img{
+	width: 100%;
+	height: 100%;
+}
+.btns{
+	position: absolute;
+	top: 510px;
+	right:50%;
+	margin-right:1%;
+}
+.btns li{
+	width: 8px;
+	height: 8px;
+	background: #252c34;
+	border-radius: 50%;
+	margin-left: 10px;
+}
+.Letters{
+	width: 280px;
+	height: 540px;
+	position: absolute;
+	top: 10px;
+	right: 110px;
+}
+.letters-content{
+	border: 1px solid #ccc;
+	font-size: 14px;
+	height: 180px;
+	width: 100%;
+	border-bottom: none;
+	box-sizing: border-box;
+}
+.letters-content li{
+	margin-top: 5px;
+}
+.icon{
+	width: 100%;
+	height: 258px;
+	border-bottom: 1px solid #ccc;
+}
+.icon-content{
+	height: 86px;
+}
+.first li{
+	width: 25%;
+	height: 86px;
+	line-height: 90px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	font-size:14px;
+	text-align: center;
+}
+.first li:nth-child(1),
+.first li:nth-child(2),
+.first li:nth-child(3),
+.first li:nth-child(4){
+	border-right: none;
+	border-bottom: none;
+}
+.first li:nth-child(4){
+	border-right: 1px solid #ccc;
+}
+.Letters img{
+	width: 100%;
 }
 /* 焦点区域结束 */
 /* 楼层区域开始 */
