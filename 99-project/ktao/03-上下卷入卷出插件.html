@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>02-淡入淡出插件.html</title>
+	<title>03-上下卷入卷出插件.html</title>
 	<style>
 		*{
 			margin: 0;
@@ -18,7 +18,7 @@
 <body>
 	<button>显示</button>
 	<button>隐藏</button>
-	<div></div>
+	<div class="transition"></div>
 </body>
 <script src='js/jQuery.js'></script>
 <script>
@@ -46,31 +46,17 @@
 
 	var slient = {
 		init:function($elem){
-			/*if($elem.is('hidden')){
-				$elem.data('status','hidden');
-			}else{
-				$elem.data('status','shown')
-			}*/
+			$elem.removeClass('transition');
 			init($elem);
 		},
 		show:function($elem){
-			/*if($elem.data('status')=='show') return;
-			if($elem.data('status')=='shown') return;
-			$elem.trigger('show');
-			$elem.show();
-			$elem.trigger('shown').data('status','shown');*/
 			show($elem,function(){
 				$elem.show();
 				$elem.trigger('shown').data('status','shown');
 			});
 		},
 		hide:function($elem){
-			/*if($elem.data('status')=='hide') return;
-			if($elem.data('status')=='hidden') return;
-			$elem.trigger('hide');
-			$elem.hide();
-			$elem.trigger('hidden').data('status','hidden');*/
-			hide($elem,function(){
+				hide($elem,function(){
 				$elem.hide();
 				$elem.trigger('hidden').data('status','hidden');
 			});
@@ -80,22 +66,10 @@
 	var js={
 		fade:{
 			init:function($elem){
-				/*if($elem.is('hidden')){
-					$elem.data('status','hidden');
-				}else{
-					$elem.data('status','shown')
-				}*/
+				$elem.removeClass('transition');
 				init($elem);
 			},
 			show:function($elem){
-				/*if($elem.data('status')=='show') return;
-				if($elem.data('status')=='shown') return;
-				$elem.trigger('show');
-				$elem
-				.stop()
-				.fadeIn(2000,function(){
-					$elem.trigger('shown').data('status','shown');
-				});*/
 				show($elem,function(){
 					$elem
 				.stop()
@@ -105,14 +79,6 @@
 				});
 			},
 			hide:function($elem){
-				/*if($elem.data('status')=='hide') return;
-				if($elem.data('status')=='hidden') return;
-				$elem.trigger('hide');
-				$elem
-				.stop()
-				.fadeOut(2000,function(){
-					$elem.trigger('hidden').data('status','hidden');
-				});*/
 				hide($elem,function(){
 					$elem
 					.stop()
@@ -121,9 +87,55 @@
 					});
 				});
 			}
+		},
+		slide:{
+			init:function($elem){
+				$elem.removeClass('transition');
+				init($elem);
+			},
+			show:function($elem){
+				show($elem,function(){
+					$elem
+				.stop()
+				.slideDown(function(){
+					$elem.trigger('shown').data('status','shown');
+				});
+				});
+			},
+			hide:function($elem){
+				hide($elem,function(){
+					$elem
+					.stop()
+					.slideUp(function(){
+						$elem.trigger('hidden').data('status','hidden');
+					});
+				});
+			}
 		}
 	}
 
+	js._init=function($elem){
+		$elem.removeClass('transition');
+		init($elem);
+	}
+	js._show=function($elem,mode){
+		show($elem,function(){
+			$elem
+		.stop()
+		[mode](function(){
+			$elem.trigger('shown').data('status','shown');
+			});
+		});
+	}
+	js._hide=function($elem,mode){
+		hide($elem,function(){
+		$elem
+		.stop()
+		[mode](function(){
+			$elem.trigger('hidden').data('status','hidden');
+			});
+		});
+	}
 </script>
 <script>
 	$(function(){
@@ -140,13 +152,22 @@
 			slient.hide($('div'));
 		});*/
 
-		js.fade.init($('div'));
+		/*js.fade.init($('div'));
 
 		$('button').eq(0).on('click',function(){
 			js.fade.show($('div'));
 		});
 		$('button').eq(1).on('click',function(){
 			js.fade.hide($('div'));
+		});*/
+
+		js.slide.init($('div'));
+
+		$('button').eq(0).on('click',function(){
+			js.slide.show($('div'));
+		});
+		$('button').eq(1).on('click',function(){
+			js.slide.hide($('div'));
 		});
 	});
 </script>
