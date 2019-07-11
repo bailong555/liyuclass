@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>04-左右卷入卷出插件.html</title>
-	<style>
-		*{
-			margin: 0;
-			padding: 0;
-		}
-		div{
-			width: 300px;
-			height: 300px;
-			background: red;
-			padding:20px;
-			border: 20px solid #baacff;
-			display: none;
-		}
-	</style>
-</head>
-<body>
-	<button>显示</button>
-	<button>隐藏</button>
-	<div class="transition"></div>
-</body>
-<script src='js/jQuery.js'></script>
-<script>
+(function($){
 	function init($elem,hiddenCallback){
 		if($elem.is('hidden')){
 			$elem.data('status','hidden');
@@ -33,21 +7,18 @@
 			$elem.data('status','shown')
 		}
 	}
-
 	function show($elem,callback){
 		if($elem.data('status')=='show') return;
 		if($elem.data('status')=='shown') return;
 		$elem.trigger('show');
 		typeof callback == 'function'&&callback();
 	}
-
 	function hide($elem,callback){
 		if($elem.data('status')=='hide') return;
 		if($elem.data('status')=='hidden') return;
 		$elem.trigger('hide');
 		typeof callback == 'function'&&callback();
 	}
-
 	var slient = {
 		init:function($elem){
 			$elem.removeClass('transition');
@@ -66,7 +37,6 @@
 			});
 		}
 	}
-
 	var js={
 		fade:{
 			init:function($elem){
@@ -118,26 +88,6 @@
 		},
 		slideLeftRight:{
 			init:function($elem){
-				/*$elem.removeClass('transition');
-				var styles = {
-					width:$elem.css('width'),
-					paddingLeft:$elem.css('paddingLeft'),
-					paddingRight:$elem.css('paddingRight'),
-					borderLeftWidth:$elem.css('borderLeftWidth'),
-					borderRightWidth:$elem.css('borderRightWidth'),
-					opacity:$elem.css('opacity')
-				};
-				$elem.data('styles',styles)
-				init($elem,function(){
-					$elem.css({
-						width:0,
-						paddingLeft:0,
-						paddingRight:0,
-						borderLeftWidth:0,
-						borderRightWidth:0,
-						opacity:0
-					})
-				})*/
 				js._customInin($elem,{
 						width:0,
 						paddingLeft:0,
@@ -148,31 +98,9 @@
 					})
 			},
 			show:function($elem){
-				/*$elem.show()
-				show($elem,function(){
-					$elem
-					.stop()
-					.animate($elem.data('styles'),function(){
-						$elem.trigger('shown').data('status','shown');
-					})
-				})*/
 				js._customShow($elem);
 			},
 			hide:function($elem){
-				/*hide($elem,function(){
-					$elem
-					.stop()
-					.animate({
-							width:0,
-							paddingLeft:0,
-							paddingRight:0,
-							borderLeftWidth:0,
-							borderRightWidth:0,
-							opacity:0
-					},function(){
-						$elem.trigger('hidden').data('status','hidden');
-					})
-				})*/
 				js._customHide($elem,{
 							width:0,
 							paddingLeft:0,
@@ -184,7 +112,6 @@
 			},
 		}
 	}
-
 	js._init=function($elem){
 		$elem.removeClass('transition');
 		init($elem);
@@ -237,48 +164,40 @@
 			})
 		})
 	}
-</script>
-<script>
-	$(function(){
-		$('div').on('show shown hide hidden',function(ev){
-			console.log(ev.type);
-		});
 
-		/*slient.init($('div'));
+	function getShowHide($elem,options){
+		var showHideFn = slient;
+		if(options.js){
+			showHideFn = js[options.mode]
+		}
 
-		$('button').eq(0).on('click',function(){
-			slient.show($('div'));
-		});
-		$('button').eq(1).on('click',function(){
-			slient.hide($('div'));
-		});*/
+		showHideFn.init($elem);
 
-		/*js.fade.init($('div'));
+		return {
+			show:showHideFn.show,
+			hide:showHideFn.hide
+		}
+	}
 
-		$('button').eq(0).on('click',function(){
-			js.fade.show($('div'));
-		});
-		$('button').eq(1).on('click',function(){
-			js.fade.hide($('div'));
-		});*/
+	var DEFAULTS = {
+		js:true,
+		mode:'slide'
+	}
 
-		/*js.slide.init($('div'));
-
-		$('button').eq(0).on('click',function(){
-			js.slide.show($('div'));
-		});
-		$('button').eq(1).on('click',function(){
-			js.slide.hide($('div'));
-		});*/
-
-		js.slideLeftRight.init($('div'));
-
-		$('button').eq(0).on('click',function(){
-			js.slideLeftRight.show($('div'));
-		});
-		$('button').eq(1).on('click',function(){
-			js.slideLeftRight.hide($('div'));
-		});
-	});
-</script>
-</html>
+	$.fn.extend({
+		showHide:function(options){
+			return this.each(function(){
+				var $elem = $(this);
+				var showHideObj = $elem.data('showHideObj');
+				if(!showHideObj){
+					options = $.extend({},DEFAULTS,options);
+					showHideObj = getShowHide($elem,options);
+					$elem.data('showHideObj',showHideObj);
+				}
+				if(typeof showHideObj[options]=='function'){
+					showHideObj[options]($elem)
+				}
+			})
+		}
+	})
+})(jQuery);

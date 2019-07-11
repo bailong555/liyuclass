@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>04-左右卷入卷出插件.html</title>
+	<title>05-显示隐藏插件封装.html</title>
 	<style>
 		*{
 			margin: 0;
@@ -21,9 +21,11 @@
 <body>
 	<button>显示</button>
 	<button>隐藏</button>
-	<div class="transition"></div>
+	<div class="box1 transition"></div>
+	<div class="box2 transition"></div>
 </body>
 <script src='js/jQuery.js'></script>
+<script src='js/showHide.js'></script>
 <script>
 	function init($elem,hiddenCallback){
 		if($elem.is('hidden')){
@@ -118,26 +120,6 @@
 		},
 		slideLeftRight:{
 			init:function($elem){
-				/*$elem.removeClass('transition');
-				var styles = {
-					width:$elem.css('width'),
-					paddingLeft:$elem.css('paddingLeft'),
-					paddingRight:$elem.css('paddingRight'),
-					borderLeftWidth:$elem.css('borderLeftWidth'),
-					borderRightWidth:$elem.css('borderRightWidth'),
-					opacity:$elem.css('opacity')
-				};
-				$elem.data('styles',styles)
-				init($elem,function(){
-					$elem.css({
-						width:0,
-						paddingLeft:0,
-						paddingRight:0,
-						borderLeftWidth:0,
-						borderRightWidth:0,
-						opacity:0
-					})
-				})*/
 				js._customInin($elem,{
 						width:0,
 						paddingLeft:0,
@@ -148,31 +130,9 @@
 					})
 			},
 			show:function($elem){
-				/*$elem.show()
-				show($elem,function(){
-					$elem
-					.stop()
-					.animate($elem.data('styles'),function(){
-						$elem.trigger('shown').data('status','shown');
-					})
-				})*/
 				js._customShow($elem);
 			},
 			hide:function($elem){
-				/*hide($elem,function(){
-					$elem
-					.stop()
-					.animate({
-							width:0,
-							paddingLeft:0,
-							paddingRight:0,
-							borderLeftWidth:0,
-							borderRightWidth:0,
-							opacity:0
-					},function(){
-						$elem.trigger('hidden').data('status','hidden');
-					})
-				})*/
 				js._customHide($elem,{
 							width:0,
 							paddingLeft:0,
@@ -244,6 +204,19 @@
 			console.log(ev.type);
 		});
 
+		var $box1 = $('.box1');
+		$box1.showHide({
+			js:true,
+			mode:'slide'
+		});
+
+		$('button').eq(0).on('click',function(){
+			$box1.showHide('show');
+		});
+		$('button').eq(1).on('click',function(){
+			$box1.showHide('hide');
+		});
+
 		/*slient.init($('div'));
 
 		$('button').eq(0).on('click',function(){
@@ -271,14 +244,14 @@
 			js.slide.hide($('div'));
 		});*/
 
-		js.slideLeftRight.init($('div'));
+		/*js.slideLeftRight.init($('div'));
 
 		$('button').eq(0).on('click',function(){
 			js.slideLeftRight.show($('div'));
 		});
 		$('button').eq(1).on('click',function(){
 			js.slideLeftRight.hide($('div'));
-		});
+		});*/
 	});
 </script>
 </html>
