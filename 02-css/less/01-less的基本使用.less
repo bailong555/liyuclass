@@ -1,0 +1,22 @@
+@w:200px;
+@h:200px;
+.box1{
+	width:@w;
+	height:@h;
+	background-color: #ffaa00;
+}
+.box2{
+	.box1;
+}
+.triangle(@_,@w,@c){
+	width:0;
+	height: 0;
+	overflow: hidden !important;
+	border:80px solid;
+}
+.triangle(@top,@w,@c){
+	border-color:#f00 transparent transparent transparent;
+}
+.box3{
+	.triangle(top,20px,#f00);
+}

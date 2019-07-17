@@ -1,0 +1,17 @@
+.box1 {
+  width: 200px;
+  height: 200px;
+  background-color: #ffaa00;
+}
+.box2 {
+  width: 200px;
+  height: 200px;
+  background-color: #ffaa00;
+}
+.box3 {
+  width: 0;
+  height: 0;
+  overflow: hidden !important;
+  border: 80px solid;
+  border-color: #f00 transparent transparent transparent;
+}
