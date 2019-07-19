@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07-弹性布局练习2.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 1200px;
+			height: 795px;
+			border: 1px solid #000;
+			display: flex;
+			flex-flow:row wrap;
+		}
+		.son2{
+			width: 200px;
+			height: 595px;
+			background-color: pink
+		}
+		.son3{
+			width: 800px;
+			height: 595px;
+			background-color: #aafcba;
+		}
+		.son4{
+			width: 200px;
+			height: 595px;
+			background-color: #bbaffc;
+		}
+		.son1,.son5{
+			width: 100%;
+			height: 100px;
+			background-color: #faccbd;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son1">top</div>
+		<div class="son2">left</div>
+		<div class="son3">content</div>
+		<div class="son4">right</div>
+		<div class="son5">bottom</div>
+	</div>
+</body>
+</html>

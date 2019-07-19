@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05-弹性布局.html</title>
+	<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.father div{
+				height: 50px;
+			}
+			.father{
+				width: 1000px;
+				border: 1px solid #000;
+				margin:200px auto;
+				display: flex;
+				/*flex-direction:row;*/
+				/*flex-direction:row-reverse;*/
+				/*flex-direction:column;*/
+				/*flex-direction:column-reverse;*/
+				/*flex-wrap:nowrap;*/
+				/*flex-wrap:wrap;*/
+				/*flex-wrap:wrap-reverse;*/
+				flex-flow:column-reverse wrap-reverse;
+			}
+			.son1{
+				width: 400px;
+				background-color:red
+			}
+			.son2{
+				width: 600px;
+				background-color:pink
+			}
+			.son3{
+				width:800px;
+				background-color:blue
+			}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son1">1</div>
+		<div class="son2">2</div>
+		<div class="son3">3</div>
+	</div>
+</body>
+</html>

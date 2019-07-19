@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10-异步处理.html</title>
+</head>
+<body>
+	
+</body>
+<script src='../05-jQuery/jQuery.js'></script>
+<script>
+	$.get('https://api.github.com/users/kuazhu',(data)=>{
+		console.log(data)
+	})
+
+	console.log('after get ajax data')
+
+	const img = new Image()
+
+	img.onload = function(){
+		console.log('image loaded')
+	}
+	img.onerray = function(){
+		console.log('image erray')
+	}
+
+
+
+
+</script>
+</html>

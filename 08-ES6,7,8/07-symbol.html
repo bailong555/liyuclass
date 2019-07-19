@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07-symbol.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let s1 = Symbol('tom');
+	let s2 = Symbol('leo');
+	console.log(s1);
+	console.log(s2);
+	console.log(s2==s1);
+
+	let obj = Symbol({
+		name:'tom',
+		[s1]:'leo',
+		[s2]:'jack'
+	})
+	console.log(obj.name)
+</script>
+</html>

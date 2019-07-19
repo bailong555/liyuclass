@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01-定义变量.html</title>
+</head>
+<body>
+	<!-- <button>box1</button>
+	<button>box2</button>
+	<button>box3</button>
+	<button>box4</button> -->
+</body>
+<script>
+	/*var oBtn = document.getElementsByTagName('button');
+	for(let i = 0;i<oBtn.length;i++){
+		oBtn[i].onclick=function(){
+			console.log(i)
+		}
+	}
+	const obj = {
+		name:'tom',
+		age:18
+	}
+	obj.hobby = 'sleep'
+	obj.name='jack'
+	console.log(obj)
+
+	let [a,b,c=3] = [1,2]
+	console.log(a,b,c)*/
+
+	let obj = {
+		interval:200,
+		name:'tom'
+	}
+	// let interval=obj.interval;
+	// let name:name=obj.name;
+	// console.log(interval)
+	// console.log(name)
+	let {interval:interval1,name:name1}=obj
+	console.log(interval1)
+	console.log(name1)
+</script>
+</html>

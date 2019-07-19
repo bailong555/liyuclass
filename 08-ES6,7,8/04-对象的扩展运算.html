@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04-对象的扩展运算.html</title>
+</head>
+<body>
+	
+</body>
+<script src="../05-jQuery/jquery.min.js"></script>
+<script>
+	var obj = {
+		name:'tom',
+		agr:18,
+		pretoName:{
+			name:'leo'
+		}
+	}
+	/*let obj1 = obj;
+	console.log(obj1.name)
+	obj.pretoName.name:'jack'
+	console.log(obj.pretoName);
+	console.log(obj1.pretoName);*/
+	let obj2 = JSON.parse(JSON.stringify(obj));
+	// obj.pretoName.name:'jack';
+	console.log(obj.pretoName);
+	console.log(obj2.pretoName);
+
+	const obj3 = $.extend(true,{},obj);
+	console.log(obj3.pretoName);
+</script>
+</html>
