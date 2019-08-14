@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>22-async返回值.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+
+	/*const promise = new Promise((resolve,reject)=>{
+		setTimeout(()=>{
+			resolve('ok')
+			// reject('err')
+		},0)
+	})
+	async function fn(){
+		
+		const data1 = await promise
+	
+		console.log(data1)
+
+		console.log('data1')
+
+		return 'resule data'
+
+	}
+	fn()
+	.then((data)=>{
+		console.log(data)
+	})
+	.catch((err)=>{
+		console.log(error)
+	})*/
+
+
+	const promise = new Promise((resolve,reject)=>{
+		setTimeout(()=>{
+			// resolve('ok')
+			reject('err')
+		},0)
+	})
+	async function fn(){
+		try{
+			const data1 = await promise
+			console.log(data1)
+		}.catch{
+			console.log('data1')
+		}
+	
+		return 'resule data'
+
+	}
+	fn()
+	.then((data)=>{
+		console.log(data)
+	})
+	.catch((err)=>{
+		console.log(error)
+	})
+</script>
+</html>

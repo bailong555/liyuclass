@@ -1,0 +1,6 @@
+// console.log('ceshi')
+console.log(_dirname)
+// console.log(_filename)
+// console.log(module)
+// console.log(exports module.exports)
+// console.log(require())

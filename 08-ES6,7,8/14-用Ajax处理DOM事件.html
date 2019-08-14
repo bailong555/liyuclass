@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>14-用Ajax处理DOM事件.html</title>
+</head>
+<body>
+	
+</body>
+<script src="../05-jQuery/jQuery.js"></script>
+<script>
+	const getDataPromise = (url)=>new Promise((resolve,reject)=>{
+		$.ajax({
+			url:url,
+			type:type,
+			data:data,
+			success:(data)=>{
+				resolve(data)
+			},
+			error:(jqXhr,statusMsg)=>{
+				reject(statusMsg)
+			}
+		})
+	})
+
+	getDataPromise('https://api.www.baidu.com')
+	.then(data=>{
+		return getDataPromise(data.followers_url)
+	})
+	.then(data=>{
+		console.log(data)
+	})
+	.catch(err=>{
+		console.log(err)
+	})
+</script>
+</html>

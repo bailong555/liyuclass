@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>18-Generator函数的基本使用.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function * gen(){
+
+		console.log('start')
+		
+		yield 'data1'
+
+		console.log('start data1')
+		
+		yield 'data2'
+
+		console.log('start data2')
+
+		console.log('end')
+
+		return 'end'
+	}
+
+	const g = gen()
+	console.log(g.next())
+	console.log(g.next())
+	console.log(g.next())
+</script>
+</html>

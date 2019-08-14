@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>21-Generator函数处理Ajax.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	const getDataPromise = (url)=>new Promise((resolve,reject)=>{
+		$.ajax({
+			url:url,
+			type:type,
+			data:data,
+			success:(data)=>{
+				resolve(data)
+			},
+			error:(jqXhr,statusMsg)=>{
+				reject(statusMsg)
+			}
+		})
+	})
+	function * gen(url){
+		const data1 = yield
+	}
+	const g = gen('https://api.www.baidu.com')
+	console.log(g.next())
+</script>
+</html>

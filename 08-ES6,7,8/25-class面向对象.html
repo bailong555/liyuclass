@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>25-class面向对象.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	class Person{
+		constructor(name,age){
+			this.name = name
+			this.age = age
+		}
+		sayName(){
+			console.log('my name is'+ this.name)
+		}
+		sayAge(){
+			console.log('I am'+ this.age + 'years old')
+		}
+		static sayHi(){
+			console.log('hello')
+		}
+	}
+	var person = new Person('tom',20)
+	person.sayName()
+	person.sayAge()
+	Person.sayHi()
+
+	class Student extends Person{
+		constructor(name,age,mode){
+			super(name,age)
+		}
+		sayMode(){
+			console.log(11)
+		}
+	}
+	const student = new Student('leo',22)
+	student.sayName()
+	student.sayAge()
+	student.sayMode()
+
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>23-async-用ajax处理.html</title>
+</head>
+<body>
+	
+</body>
+<script src="../05-jQuery/jQuery.js"></script>
+<script>
+	const getDataPromise = (url)=>new Promise((resolve,reject)=>{
+		$.ajax({
+			url:url,
+			type:type,
+			data:data,
+			success:(data)=>{
+				resolve(data)
+			},
+			error:(jqXhr,statusMsg)=>{
+				reject(statusMsg)
+			}
+		})
+	})
+
+	getDataPromise('https://api.www.baidu.com')
+
+	async function getBaiduData(url){
+		const data1 = await getDataPromise(url)
+		console.log(data1)
+	}
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>19-Generator函数-传参.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function * gen(x){
+
+		console.log(x)
+		
+		const y=yield(x+10)
+
+		console.log(y)
+		
+		const z=yield(y+20)
+
+		console.log(z)
+
+		return (x+y+z)
+	}
+
+	const g = gen(5)
+	console.log(g.next())
+	console.log(g.next(30))
+	console.log(g.next(80))
+</script>
+</html>

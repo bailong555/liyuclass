@@ -1,0 +1,9 @@
+.user-info{
+	float: right;
+	margin-top: 10px;
+	margin-right: 100px;
+}
+.content{
+	margin-top:20px;
+	min-height: 300px;
+}

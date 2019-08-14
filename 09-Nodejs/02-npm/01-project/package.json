@@ -1,0 +1,21 @@
+{
+  "name": "01-project",
+  "version": "1.0.0",
+  "description": "\"\"\u001b[Dproject",
+  "main": "index.js",
+  "scripts": {
+    "test": "bai"
+  },
+  "repository": {
+    "type": "git",
+    "url": "bailong555"
+  },
+  "keywords": [
+    "bl"
+  ],
+  "author": "Mrbai\u001b[D\u001b[B",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^1.12.4"
+  }
+}

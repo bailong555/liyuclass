@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>17-Promise静态方法-race.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	const getImagePromise = (delay)=>new Promise((resolve,reject)=>{
+		setTimeout(()=>{
+			resolve('succeed')
+		},delay);
+	});
+
+	const promise = [200,300,150].map(delay=>getImagePromise(delay));
+
+	const p1 = new Promise((resolve,reject)=>{
+		setTimeout(()=>{
+			reject('soler');
+		},100);
+	});
+
+	promise.push(p1)
+	console.log(promise)
+
+	const p = getImagePromise()
+	.then(data=>{
+		console.log(data)
+	})
+	.catch(err=>{
+		console.log(error)
+	})
+</script>
+</html>
