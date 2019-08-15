@@ -7,11 +7,15 @@
 <body>
 	<div id="root">
 		<h1></h1>
-		<p></p>
+		<p>9:27</p>
 	</div>
 </body>
 <script>
-	var root = document.getElementById('root')
-	function tick(){}
+	var root = document.getElementById('root');
+	function tick(){
+		 root.innerHTML = `<h1>hello</h1><p>${new Date().toLocaleTimeString()}</p>`;
+	}
+	tick()
+	setInterval(tick,1000)
 </script>
 </html>

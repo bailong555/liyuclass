@@ -5,13 +5,24 @@
 	<title>02-4.18.html</title>
 </head>
 <body>
-	
+	<div id="root">
+		<h1>1</h1>
+		<p>1</p>
+	</div>
 </body>
 <script>
+	var root = document.getElementById('root')
+	function tick(){
+		root.innrtHTML='<h1>hello</h1><p>${new Date().tolocaleTimeString()}</p>'
+	}
+	tick()
+	
 	function num(a,b){
 		return Math.floor(Math.random()*(a+(b-a)));
 	}
 	num();
 	console.log(num);
+
+	
 </script>
 </html>

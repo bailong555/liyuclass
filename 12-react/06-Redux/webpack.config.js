@@ -1,10 +1,3 @@
-/*
-* @Author: TomChen
-* @Date:   2019-08-08 16:30:19
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-08-11 17:52:31
-*/
-
 const path = require('path')
 
 const htmlWebpackPlugin = require('html-webpack-plugin')
@@ -59,7 +52,7 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: ['env', 'react'],
-                        plugins: [["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }] ]
+                        plugins: [["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]]
                     },
                 }               
             },                    

@@ -1,9 +1,3 @@
-/*
-* @Author: TomChen
-* @Date:   2019-08-09 15:14:36
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-08-11 17:41:18
-*/
 import React,{ Component } from 'react'
 import Item from './Item.js'
 
