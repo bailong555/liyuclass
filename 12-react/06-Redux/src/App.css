@@ -1,37 +1,47 @@
+/*
+* @Author: TomChen
+* @Date:   2019-08-09 15:59:28
+* @Last Modified by:   TomChen
+* @Last Modified time: 2019-08-11 17:55:54
+*/
 *{
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
-#root{
-	width: 800px;
-	height: 600px;
-	margin: 50px auto;
+.App {
+    width: 960px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
 /*
-button{
-	color:red;
-	width: 50px;
-	height: 40px;
+.App input{
+    width: 900px;
+    height: 40px;
+    outline: none;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    font-size: 18px;
+    vertical-align: middle;
 }
-ul{
-	margin-top:100px;
+.App button{
+    width: 50px;
+    height: 40px;
 }
-li{
-	list-style: none;
-	border-bottom: 1px solid #000;
-	width: 500px;
-	margin-top:20px;
-	margin-left: 200px;
-	cursor: pointer;
+.App ul{
+    margin-top: 20px;
+    list-style: none;
 }
-input{
-	width: 500px;
-	height: 40px;
-	margin-top:50px;
-	margin-left:200px;
-	outline: none;
-	box-sizing: border-box;
-	padding:10px;
-	font-size: 16px;
+.App ul li{
+    line-height: 30px;
+    border-bottom: 1px dashed #ccc;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-left:2px solid #f67;
+    cursor: pointer;
+    padding: 0 10px;
+}
+.App ul li:hover{
+    background-color: #eee;
 }
 */
