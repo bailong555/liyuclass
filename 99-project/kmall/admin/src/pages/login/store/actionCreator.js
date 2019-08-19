@@ -1,10 +1,6 @@
-/*
-* @Author: TomChen
-* @Date:   2019-08-12 15:11:47
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-08-14 10:59:46
-*/
 import axios from 'axios'
+
+import {  } from ''
 
 import * as types  from './actionTypes.js'
 
@@ -28,14 +24,27 @@ const getLoadInitDataAction = (payload)=>({
     payload
 })
 
-export const getRequestInitDataAction = ()=>{
+export const getLoginAction = (values)=>{
     return (dispatch,getState)=>{
-        axios.get('http://127.0.0.1:3000')
+        values.role = 'admin'
+        axios({
+            method:'post',
+            url:'http://127.0.0.1:3000/sessions/users',
+            data:values
+        })
         .then(result=>{
-            dispatch(getLoadInitDataAction(result.data))
+            //console.log(result)
+            const data = result.data
+            if(data.code == 0){
+                //1.在前端保存登录信息
+                //2.跳转到后台首页
+            }
+            else{
+                message.error(data.message)
+            }
         })
         .catch(err=>{
-            console.log(err)
+            message.error('网络错误，请稍后再试')
         })        
     }
 }

@@ -6,11 +6,16 @@ import "./index.css"
 import { actionCreator } from './store'
 
 class NormalLoginForm extends React.Component {
+    constructor(props){
+      super(props)
+      this.handleSubmit=this.handleSubmit.bind(this)
+    }
     handleSubmit(e) {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                console.log('Received values of form: ', values);
+                //console.log('Received values of form: ', values);
+                this.props.handleLogin(values)
             }
         });
     };
@@ -21,27 +26,30 @@ class NormalLoginForm extends React.Component {
         <Form onSubmit={this.handleSubmit} className="login-form">
             <Form.Item>
               {getFieldDecorator('username', {
-                rules: [{ required: true, message: 'Please input your username!' }],
+                rules: [{ required: true, message: '请输入用户名!' },{pattern:/^[a-z][a-z0-9_]{2,5}$/,message:"用户名为3-6位数字字母或下划线"}],
               })(
                 <Input
-                  prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                  prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,0.25)' }} />}
                   placeholder="用户名"
                 />,
               )}
             </Form.Item>
             <Form.Item>
               {getFieldDecorator('password', {
-                rules: [{ required: true, message: 'Please input your Password!' }],
+                rules: [{ required: true, message: '请输入密码!' },{pattern:/^\w{3,6}$/,message:"密码为3-6位任意字符"}],
               })(
                 <Input
-                  prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                  prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,0.25)' }} />}
                   type="password"
                   placeholder="密码"
                 />,
               )}
             </Form.Item>
             <Form.Item>
-              <Button type="primary" htmlType="submit" className="login-form-button">
+              <Button type="primary" 
+              className="login-form-button"
+              onClick={this.handleSubmit}
+              >
                 登录
               </Button>
             </Form.Item>
@@ -60,18 +68,8 @@ const mapStateToProps = (state) => ({
 })
 //映射方法到组件
 const mapDispatchToProps = (dispatch) => ({
-    handleChange: (ev) => {
-        const task = ev.target.value
-        dispatch(actionCreator.getChangeItemAction(task))
-    },
-    handleAdd: () => {
-        dispatch(actionCreator.getAddItemAction())
-    },
-    handleDel: (index) => {
-        dispatch(actionCreator.getDelItemAction(index))
-    },
-    handleInit: () => {
-        dispatch(actionCreator.getRequestInitDataAction())
+    handleLogin: (values) => {
+      dispatch(actionCreator.getLoginAction(values))
     }
 })
 
