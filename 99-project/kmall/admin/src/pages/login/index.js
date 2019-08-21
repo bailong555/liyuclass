@@ -5,7 +5,7 @@ import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import "./index.css"
 import { actionCreator } from './store'
 
-class NormalLoginForm extends React.Component {
+class NormalLoginForm extends Component {
     constructor(props){
       super(props)
       this.handleSubmit=this.handleSubmit.bind(this)
@@ -47,8 +47,9 @@ class NormalLoginForm extends React.Component {
             </Form.Item>
             <Form.Item>
               <Button type="primary" 
-              className="login-form-button"
-              onClick={this.handleSubmit}
+                className="login-form-button"
+                onClick={this.handleSubmit}
+                loading={this.props.isFetching}
               >
                 登录
               </Button>
@@ -63,8 +64,7 @@ const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(NormalLogin
 
 //映射属性到组件
 const mapStateToProps = (state) => ({
-    task: state.get('login').get('task'),
-    list: state.get('login').get('list')
+    isFetching: state.get('login').get('isFetching'),
 })
 //映射方法到组件
 const mapDispatchToProps = (dispatch) => ({
