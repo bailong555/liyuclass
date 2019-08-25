@@ -5,7 +5,7 @@ const { Header } = Layout;
 
 import {getUsername,removeUsername} from 'util'
 
-import axios from 'axios'
+import api from 'api'
 
 import "./index.css"
 
@@ -15,7 +15,13 @@ class AdminHeader extends Component {
       this.handelLogout = this.handelLogout.bind(this)
     }
     handelLogout(){
-      axios({
+      api.logout()
+      .then(result=>{
+        if(result.code == 0){
+          removeUsername()
+          window.location.href = '/login'
+        }
+      /*axios({
         method:'delete',
         url:'http://127.0.0.1:3000/sessions/users'
       })
@@ -23,7 +29,7 @@ class AdminHeader extends Component {
         if(result.data.code == 0){
           removeUsername()
           window.location.href = '/login'
-        }
+        }*/
       })
     }
     render() {

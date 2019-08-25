@@ -10,7 +10,11 @@ class Home extends Component {
     constructor(props){
       super(props)
     }
+    componentDidMount(){
+      this.props.handelCount()
+    }
     render() {
+      const {usernum,ordernum,productnum} = this.props
         return (
           <div className="Home">
             <Layout>
@@ -21,23 +25,20 @@ class Home extends Component {
               <Row>
                 <Col span={8}>
                   <Card title="用户数" bordered={false} style={{ width: 300 }}>
-                    <p>10</p>
+                    <p>{usernum}</p>
                   </Card>
                 </Col>
                 <Col span={8}>
                   <Card title="商品数" bordered={false} style={{ width: 300 }}>
-                    <p>10</p>
+                    <p>{productnum}</p>
                   </Card>
                 </Col>
                 <Col span={8}>
                   <Card title="订单数" bordered={false} style={{ width: 300 }}>
-                    <p>10</p>
+                    <p>{ordernum}</p>
                   </Card>
                 </Col>
-              </Row>
-                
-                
-                
+              </Row> 
               </div>
             </Layout>
           </div>
@@ -48,9 +49,15 @@ class Home extends Component {
 
 //映射属性到组件
 const mapStateToProps = (state) => ({
+    usernum:state.get('home').get('usernum'),
+    ordernum:state.get('home').get('ordernum'),
+    productnum:state.get('home').get('productnum')
 })
 //映射方法到组件
 const mapDispatchToProps = (dispatch) => ({
+    handelCount:()=>{
+      dispatch(actionCreator.getCountAction())
+    }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)
