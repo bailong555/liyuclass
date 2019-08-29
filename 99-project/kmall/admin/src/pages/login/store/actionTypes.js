@@ -1,2 +1,2 @@
-export const Login_Reqest_Start = "login@login_reqest_start"
-export const Login_Done_Start = "login@login_done_start"
+export const LOGIN_REQEST_START = "login@login_reqest_start"
+export const LOGIN_REQEST_DONE = "login@login_reqest_done"

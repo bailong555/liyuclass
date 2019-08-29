@@ -1,3 +1,5 @@
+//目标 导出一个对象 对象的属性是方法名,对象的值是方法
+
 import axios from 'axios'
 
 import { removeUsername } from 'util'
@@ -21,9 +23,9 @@ const getApiObj = (apiConfig)=>{
 }
 
 const request = (url,method,data)=>{
-	return new Promise((resolve,reject)=>{
-		const options = {
-            method:method,
+    return new Promise((resolve,reject)=>{
+        const options = {
+            method: method,
             url:url,
             withCredentials:true,
         }
@@ -37,20 +39,21 @@ const request = (url,method,data)=>{
         }
         axios(options)
         .then(result=>{
-            const data = result.data
-            if( data.code == 10 ){
+            const data  = result.data
+            if(data.code == 10){
                 removeUsername()
                 window.location.href = '/login'
                 reject('用户没有权限')
+            }else{
+                resolve(data)
             }
-            resolve(data)
+            
         })
         .catch(err=>{
             reject(err)
-        })  
-	})
+        })
+    })
 }
-
 
 
 export default getApiObj(API_CONFIG)

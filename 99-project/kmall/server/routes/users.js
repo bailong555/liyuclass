@@ -1,3 +1,9 @@
+/*
+* @Author: Tom
+* @Date:   2018-08-06 09:23:30
+* @Last Modified by:   TomChen
+* @Last Modified time: 2019-08-16 16:02:18
+*/
 const Router = require('express').Router;
 
 const UserModel = require('../models/user.js');
@@ -8,7 +14,8 @@ const hmac = require('../util/hmac.js')
 
 const router = Router();
 
-/*router.get('/init',(req,res)=>{
+/*
+router.get('/init',(req,res)=>{
 	UserModel.insertMany({
 		username:'admin',
 		password:hmac('admin'),
@@ -18,10 +25,12 @@ const router = Router();
 		res.send('ok')
 	})
 	.catch(err=>{
+		console.log(err)
 		res.send('err')
 	})
 })
-
+*/
+/*
 router.get('/init',(req,res)=>{
 	const users = []
 	for(let i = 0;i<500;i++){
@@ -42,6 +51,7 @@ router.get('/init',(req,res)=>{
 	})
 })
 */
+
 //检查用户名是否存在
 router.get("/checkUsername",(req,res)=>{
 	const username = req.query.username;

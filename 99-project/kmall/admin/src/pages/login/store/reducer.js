@@ -8,11 +8,11 @@ const defaultState = fromJS({
 })
 
 export default (state=defaultState,action)=>{
-    if(action.type == types.Login_Reqest_Start){
+    if(action.type == types.LOGIN_REQEST_START){
         return state.set('isFetching',true)
     }
-    if(action.type == types.PAGE_DONE_START){
+    if(action.type == types.LOGIN_REQEST_DONE){
         return state.set('isFetching',false)
-    }
+    }    
     return state
 }

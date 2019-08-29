@@ -21,14 +21,64 @@ const setCategoriesAction = (payload)=>({
     type:types.SET_CATEGORIES,
     payload
 })
+const setMainImageErrorAction = ()=>({
+    type:types.SET_MAIN_IMAGE_ERROR,
+})
+const setImagesErrorAction = ()=>({
+    type:types.SET_IMAGES_ERROR,
+})
+export const setMainImageAction = (payload)=>({
+    type:types.SET_MAIN_IMAGE,
+    payload
+})
+export const setImagesAction = (payload)=>({
+    type:types.SET_IMAGES,
+    payload
+})
+export const setDetailAction = (payload)=>({
+    type:types.SET_DETAIL,
+    payload
+})
 
-export const getAddAction = (values)=>{
+
+export const getSaveAction = (err,values)=>{
     return (dispatch,getState)=>{
-        api.addCategories(values)
+        const state = getState().get('product')
+        const mainImage = state.get('mainImage')
+        const images = state.get('images')
+        const detail = state.get('detail')
+        
+        let hasErr = false
+        if(err){
+            hasErr = true
+        }
+        if(!mainImage){
+            hasErr = true
+            dispatch(setMainImageErrorAction())
+        }
+        if(!images){
+            hasErr = true
+            dispatch(setImagesErrorAction())
+        }
+
+        if(hasErr){
+            return
+        }
+        let request = api.addProducts
+        if(values.id){
+            request = api.updateProducts
+        }
+        request({
+            ...values,
+            mainImage,
+            images,
+            detail
+        })
         .then(result=>{
             if(result.code == 0){
-                message.success('添加分类成功')
-                dispatch(setCategoriesAction(result.data))
+                message.success(result.message,()=>{
+                    window.location.href = "/product"
+                })
             }else{
                 message.error(result.message)
             }
@@ -36,13 +86,14 @@ export const getAddAction = (values)=>{
         })
         .catch(err=>{
             message.error('网络错误,请稍后再试')
-        })              
+        })
+                    
     }
 }
 export const getLevelCategoriesAction = ()=>{
     return (dispatch,getState)=>{
         api.getlevelCategories({
-            level:2
+            level:3
         })
         .then(result=>{
             if(result.code == 0){
@@ -54,17 +105,21 @@ export const getLevelCategoriesAction = ()=>{
         })              
     }
 }
-export const getPageAction = (page)=>{
+export const getPageAction = (page,keyword)=>{
     return (dispatch,getState)=>{
         dispatch(getPageReqestStartAction())
-        api.getCategoriesList({
+        const options = {
             page:page
-        })
+        }
+        if(keyword){
+            options.keyword = keyword
+        }
+        api.getProductsList(options)
         .then(result=>{
             if(result.code == 0){
                 dispatch(getSetPageAction(result.data))
             }else{
-                message.error('获取分类数据失败,请稍后再试')
+                message.error('获取商品数据失败,请稍后再试')
             }
         })
         .catch(err=>{
@@ -75,17 +130,19 @@ export const getPageAction = (page)=>{
         })                 
     }
 }
-export const getUpdateNameAction = (id,newName)=>{
+
+
+export const getUpdateIsShowAction = (id,newIsShow)=>{
     return (dispatch,getState)=>{
-        const page = getState().get('category').get('current')
-        api.updateCategoriesName({
+        const page = getState().get('product').get('current')
+        api.updateProductsIsShow({
             id:id,
-            name:newName,
+            isShow:newIsShow,
             page:page
         })
         .then(result=>{
             if(result.code == 0){
-                message.success('更新分类名称成功')
+                message.success('更新显示隐藏成功')
                 dispatch(getSetPageAction(result.data))
             }else{
                 message.error(result.message)
@@ -96,17 +153,38 @@ export const getUpdateNameAction = (id,newName)=>{
         })               
     }
 }
-export const getUpdateMobileNameAction = (id,newMobileName)=>{
+export const getUpdateStatusAction = (id,newStatus)=>{
     return (dispatch,getState)=>{
-        const page = getState().get('category').get('current')
-        api.updateCategoriesMobileName({
+        const page = getState().get('product').get('current')
+        api.updateProductsStatus({
             id:id,
-            mobileName:newMobileName,
+            status:newStatus,
             page:page
         })
         .then(result=>{
             if(result.code == 0){
-                message.success('更新手机分类名称成功')
+                message.success('更新上架下架成功')
+                dispatch(getSetPageAction(result.data))
+            }else{
+                message.error(result.message)
+            }
+        })
+        .catch(err=>{
+            message.error('网络错误,请稍后再试')
+        })               
+    }
+}
+export const getUpdateIsHotAction = (id,newIsHot)=>{
+    return (dispatch,getState)=>{
+        const page = getState().get('product').get('current')
+        api.updateProductsIsHot({
+            id:id,
+            isHot:newIsHot,
+            page:page
+        })
+        .then(result=>{
+            if(result.code == 0){
+                message.success('更新是否成功')
                 dispatch(getSetPageAction(result.data))
             }else{
                 message.error(result.message)
@@ -119,8 +197,8 @@ export const getUpdateMobileNameAction = (id,newMobileName)=>{
 }
 export const getUpdateOrderAction = (id,newOrder)=>{
     return (dispatch,getState)=>{
-        const page = getState().get('category').get('current')
-        api.updateCategoriesOrder({
+        const page = getState().get('product').get('current')
+        api.updateProductsOrder({
             id:id,
             order:newOrder,
             page:page
@@ -138,25 +216,26 @@ export const getUpdateOrderAction = (id,newOrder)=>{
         })               
     }
 }
-export const getUpdateUpdateIsShowAction = (id,newIsShow)=>{
+
+const setProductDetailAction = (payload)=>({
+    type:types.SET_PRODUCT_DETAIL,
+    payload
+})
+
+export const getProductDetailAction = (productId)=>{
     return (dispatch,getState)=>{
-        const page = getState().get('category').get('current')
-        api.updateCategoriesIsShow({
-            id:id,
-            isShow:newIsShow,
-            page:page
+        api.getProductDetail({
+            id:productId
         })
         .then(result=>{
             if(result.code == 0){
-                message.success('更新显示隐藏成功')
-                dispatch(getSetPageAction(result.data))
-            }else{
-                message.error(result.message)
+                dispatch(setProductDetailAction(result.data))
             }
+            
         })
         .catch(err=>{
             message.error('网络错误,请稍后再试')
-        })               
+        })              
     }
 }
 

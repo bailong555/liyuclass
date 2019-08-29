@@ -1,10 +1,9 @@
 import api from 'api'
-
 import { message } from 'antd'
 
-import {saveUsername} from 'util'
-
 import * as types  from './actionTypes.js'
+
+import { saveUsername } from 'util'
 
 const getSetCountAction = (payload)=>({
     type:types.SET_COUNT,
@@ -16,32 +15,32 @@ export const getCountAction = (values)=>{
         api.getCounts()
         .then(result=>{
             if(result.code == 0){
-                dispatch(getCountAction(result.data))
-            }
-            else{
+                dispatch(getSetCountAction(result.data))
+            }else{
                 message.error('获取首页数据失败,请稍后再试')
             }
         })
         .catch(err=>{
-            message.error('网络错误，请稍后再试')
-        }) 
-        /*axios({
-            method:'get',
+            message.error('网络错误,请稍后再试')
+        })                
+        /*
+        axios({
+            method: 'get',
             url:'http://127.0.0.1:3000/counts/',
             withCredentials:true
         })
         .then(result=>{
-            const data = result.data
+            const data  = result.data
             if(data.code == 0){
-                dispatch(getCountAction(data.data))
-            }
-            else{
+                dispatch(getSetCountAction(data.data))
+            }else{
                 message.error('获取首页数据失败,请稍后再试')
             }
         })
         .catch(err=>{
-            message.error('网络错误，请稍后再试')
-        })   */    
+            message.error('网络错误,请稍后再试')
+        })
+        */     
     }
 }
 
