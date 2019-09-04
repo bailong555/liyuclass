@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>06-修饰符-once.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			margin:100px auto;
+		}
+		.xl{
+			width: 500px;
+			height: 500px;
+			border: 1px solid #000;
+			background-color: #abcfed;
+		}
+		.l{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #000;
+			background-color: #dcaebf;
+		}
+		.s{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			background-color: #dfbeac;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<div @click='clickXl' class="xl">
+			<div @click='clickL' class="l">
+				<div @click.once='clickS' class="s"></div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+	var vm = new Vue({
+		el:"#app",
+		data:{},
+		methods:{
+			clickXl(){
+				console.log('xl')
+			},
+			clickL(){
+				console.log('l')
+			},
+			clickS(){
+				console.log('s')
+			}
+		}
+	})
+</script>
+</html>

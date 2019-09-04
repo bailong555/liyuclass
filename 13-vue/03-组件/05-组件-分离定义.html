@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05-组件-分离定义.html</title>
+</head>
+<body>
+	<div id="app">
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+	</div>
+	<script type="text/x-template" id="button-counter">
+		<button v-on:click="count++">You clicked me {{ count }} times.</button>
+	</script>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+	//定义
+	var ButtonCounter = Vue.extend({
+	  	template: '#button-counter',
+		data: function () {
+	    return {
+	      count: 0
+	    }
+	  },
+	})
+	//注册
+	Vue.component('button-counter',ButtonCounter)
+
+	var vm = new Vue({
+		el:"#app",
+		data:{
+		}
+	})
+</script>
+</html>

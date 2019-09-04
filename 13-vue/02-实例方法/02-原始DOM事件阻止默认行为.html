@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>02-原始DOM事件阻止默认行为.html</title>
+</head>
+<body>
+	<div id="app">
+		<a @click='goShopping($event)' href="http://www.taobao.com">淘宝</a>
+	</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+	var vm = new Vue({
+		el:"#app",
+		data:{},
+		methods:{
+			goShopping(ev){
+				ev.preventDefault()
+				console.log('go shopping ...')
+			}
+		}
+	})
+</script>
+</html>

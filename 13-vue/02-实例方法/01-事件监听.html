@@ -8,6 +8,9 @@
 	<div id="app">
 		<button v-on:click=count++>点击了{{count}}次</button>
 		<button @click=count++>点击了{{count}}次</button>
+		<button @click=click>点击了{{count}}次</button>
+		<button @click=live>点击了{{count}}次</button>
+		<button @click=live('b')>点击了{{count}}次</button>
 	</div>
 </body>
 <script src="../js/vue.js"></script>
@@ -16,6 +19,14 @@
 		el:"#app",
 		data:{
 			count:0
+		},
+		methods:{
+			click(){
+				this.count++
+			},
+			live(a){
+				console.log(a)
+			}
 		}
 	})
 </script>

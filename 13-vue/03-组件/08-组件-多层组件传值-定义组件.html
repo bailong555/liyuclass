@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08-组件-多层组件传值-定义组件.html</title>
+</head>
+<body>
+	<div id="app">
+		<todo-item 
+		></todo-item>
+	</div>
+	<template id="todo-item">
+		<div>
+			<task></task><br>
+			<dateline></dateline>
+		</div>
+	</template>
+	<template id="task">
+		<span>{{tag}}:战斗之夜</span>
+	</template>
+	<template id="dateline">
+		<span>{{tag}}:2019-09-14</span>
+	</template>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+	var Task = Vue.extend({
+	  	template: '#task',
+		data: function () {
+		    return {
+		    	tag:'活动'
+		    }
+		},
+	})
+
+	var Dateline = Vue.extend({
+	  	template: '#dateline',
+		data: function () {
+		    return {
+		    	tag:'日期'
+		    }
+		},
+	})
+	//定义
+	var TodoItem = Vue.extend({
+	  	template: '#todo-item',
+		data: function () {
+		    return {
+		    }
+		},
+		components:{
+			task:Task,
+			dateline:Dateline
+		}
+	})
+	//注册
+	Vue.component('todo-item',TodoItem)
+
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			items:[
+			]
+		}
+	})
+</script>
+</html>

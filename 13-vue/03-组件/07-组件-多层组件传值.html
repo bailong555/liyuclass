@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07-组件-多层组件传值.html</title>
+</head>
+<body>
+	<div id="app">
+		<todo-item 
+			v-for='(item,index) in items'
+			:key='index'
+			:index='index'
+			:task="item.task"
+		></todo-item>
+	</div>
+	<template id="todo-item">
+		<div>{{index}}-{{task}}</div>
+	</template>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+	//定义
+	var TodoItem = Vue.extend({
+	  	template: '#todo-item',
+		data: function () {
+		    return {
+		    }
+		},
+		props:{
+			task:String,
+			index:Number
+		}
+	})
+	//注册
+	Vue.component('todo-item',TodoItem)
+
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			items:[
+				{
+					id:1,
+					task:'吃饭'
+				},
+				{
+					id:2,
+					task:'睡觉'
+				},
+				{
+					id:3,
+					task:'玩游戏'
+				},
+			]
+		}
+	})
+</script>
+</html>
