@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>12-组件-实名卡槽.html</title>
+</head>
+<body>
+	<div id="app">
+		<layout>
+			<div slot='focus'>中间内容</div>
+			<div slot='content'>中间内容</div>
+		</layout>
+	</div>
+	<template id="layout">
+		<div>
+			<nav>顶部内容</nav>
+			<slot name='focus'>主要内容</slot>
+			<slot name='content'>主要内容</slot>
+			<footer>底部内容</footer>
+		</div>
+	</template>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+	Vue.component('layout', {
+	  template: '#layout',
+	})
+	var vm = new Vue({
+		el:"#app",
+		data:{
+		},
+	})
+</script>
+</html>

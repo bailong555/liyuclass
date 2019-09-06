@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>21-路由-基本使用.html</title>
+	<link rel="stylesheet" href="animate.css">
+</head>
+<body>
+	<div id="app">
+		<nav>
+			<router-link to='/home' >home</router-link>
+			<router-link to='/articles' >articles</router-link>
+			<router-link to='/about' >about</router-link>
+		</nav>
+		<div>
+			<!-- 路由出口 -->
+			<!-- 路由匹配到的组件将渲染在这里 -->
+			<router-view></router-view>
+		</div>
+	</div>
+	<template id="home">
+			<div>
+				home
+			</div>
+		</template>
+		<template id="articles">
+			<div>
+				articles
+			</div>
+		</template>
+		<template id="about">
+			<div>
+				about
+			</div>
+		</template>
+</body>
+<script src="../js/vue.js"></script>
+<script src="../js/vue-router.js"></script>
+<script>
+	//1.定义路由组件
+	var Home = Vue.extend({
+		template:'#home'
+	})
+	var Articles = Vue.extend({
+		template:'#articles'
+	})
+	var About = Vue.extend({
+		template:'#about'
+	})
+	//2.定义路由
+	var routes = [
+		{path:"/home",component:Home},
+		{path:"/articles",component:Articles},
+		{path:"/about",component:About}
+	]
+	//3.创建 router 实例 然后传 'routes' 配置
+	var router = new VueRouter({
+		routes:routes
+	})
+	//4.创建和挂载
+	var vm = new Vue({
+		el:"#app",
+		router:router,
+		data:{},
+	})
+</script>
+</html>

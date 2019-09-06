@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03-动画-自定义过度类.html</title>
+	<link rel="stylesheet" href="animate.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<button @click='show = !show'>切换</button>
+		<transition
+			enter-active-class="animated flash"
+		    leave-active-class="animated 
+		    bounceOut"
+			appear
+		>
+			<p v-if='show' >显示</p>
+		</transition>
+	</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			show:true
+		},
+	})
+</script>
+</html>

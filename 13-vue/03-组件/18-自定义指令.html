@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>18-自定义指令.html</title>
+	<link rel="stylesheet" href="animate.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-focus>
+	</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+	//全局
+	/*Vue.directive('focus',{
+		inserted: function (el) {
+	    	// 聚焦元素
+	    	el.focus()
+	  	}
+	})
+	var vm = new Vue({
+		el:"#app",
+		data:{},
+	})*/
+
+
+	//局部
+	var vm = new Vue({
+		el:'#app',
+		data:{},
+		directives:{
+			'focus':{
+				inserted:function(el){
+					el.focus()
+				}
+			}
+		}
+	})
+</script>
+</html>
