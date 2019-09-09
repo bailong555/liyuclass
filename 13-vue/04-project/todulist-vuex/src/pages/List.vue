@@ -1,14 +1,12 @@
-
 <template>
-	<div class="List">
-		<Item 
-			v-for='(todo,index) in todos'
-			:todo='todo'
-			:index='index'
-			:key='index'
-			:delTodo='delTodo'
-		/>
-	</div>
+    <div class="List">
+        <Item 
+            v-for="(todo,index) in this.$store.state.todos"
+            :todo="todo"
+            :index="index"
+            :key="index"
+        />
+    </div>
 </template>
 
 <script>
