@@ -1,3 +1,9 @@
+/*
+* @Author: TomChen
+* @Date:   2019-08-16 10:20:25
+* @Last Modified by:   TomChen
+* @Last Modified time: 2019-08-28 17:03:48
+*/
 
 export const SERVER = 'http://127.0.0.1:3000'
 export const UPLOAD_PRODUCT_IMAGE = SERVER + '/products/images'
@@ -26,4 +32,11 @@ export const API_CONFIG = {
     updateProductsOrder:         ['/products/order','put'],
     getAdsList:                  ["/ads/list","get"],
     getAdsDetail:                ["/ads/detail","get"],
+    addAds:                      ["/ads","post"],
+    updateAds:                   ["/ads","put"],
+    updateAdsOrder:              ["/ads/order","put"],
+    updateAdsIsShow:             ["/ads/isShow","put"],
+    getOrdersList:               ["/orders/list","get"],
+    getOrdersDetail:             ["/orders/detail","get"],
+    updateOrdersStatus:          ["/orders/status","put"],           
 }

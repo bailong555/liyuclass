@@ -1,3 +1,9 @@
+/*
+ * @Author: TomChen
+ * @Date:   2019-08-09 15:14:36
+ * @Last Modified by:   TomChen
+ * @Last Modified time: 2019-08-21 15:57:08
+ */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { actionCreator } from './store'

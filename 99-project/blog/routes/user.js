@@ -1,6 +1,13 @@
+/*
+* @Author: TomChen
+* @Date:   2019-08-01 15:30:57
+* @Last Modified by:   TomChen
+* @Last Modified time: 2019-08-04 16:49:28
+*/
 const express = require('express')
 const UserModel = require('../models/user.js')
 const hmac = require('../util/hmac.js')
+
 
 const router = express.Router()
 
@@ -38,7 +45,7 @@ router.post('/register', (req, res) => {
                 res.json({
                     status:10,
                     message:"服务器端错误,请稍后再试"
-                })
+                })  
             })
         }
     })
@@ -50,49 +57,51 @@ router.post('/register', (req, res) => {
         })          
     })
 })
-
 //登录
-router.post('/login',(req,res)=>{
-   //1.获取参数
-   const { username,password } = req.body
-   //2.验证
-   UserModel.findOne({username:username,password:hmac(password)},"-password -__v")
-   .then(user=>{
-        //登录成功
+router.post('/login', (req,res)=>{
+    //1.获取参数
+    const { username,password } = req.body
+    //2.验证
+    UserModel.findOne({username:username,password:hmac(password)},"-password -__v")
+    .then(user=>{
+        //验证成功
         if(user){
-            //生成cookies并且返回给前端
-            // req.cookies.set('userInfo',JSON.stringify(user),{maxAge:1000*60*60*24})
+            //生成cookie并且返回给前端
+            //req.cookies.set('userInfo',JSON.stringify(user),{maxAge:1000*60*60*24})
             //添加session
             req.session.userInfo = user
             res.json({
                 status:0,
-                message:"登陆成功",
+                message:"登录成功",
                 data:user
-            })
+            }) 
         }
-        //登录失败
+        //验证失败
         else{
             res.json({
                 status:10,
                 message:"用户名和密码错误"
             })
         }
-   })
-   .catch(err=>{
+    })
+    .catch(err=>{
         console.log("insert user:",err)
         res.json({
             status:10,
             message:"服务器端错误,请稍后再试"
         })          
-    })
+    })        
+
 })
-//退出
+//退出登录
 router.get('/logout',(req,res)=>{
     //req.cookies.set('userInfo',null)
     req.session.destroy()
     res.json({
         status:0,
-        message:"退出成功"
-    })
+        message:"退出登录成功"
+    })    
 })
+
+
 module.exports = router
