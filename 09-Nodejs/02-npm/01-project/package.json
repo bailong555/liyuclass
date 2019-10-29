@@ -16,6 +16,6 @@
   "author": "Mrbai\u001b[D\u001b[B",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^1.12.4"
+    "jquery": "^3.4.0"
   }
 }
